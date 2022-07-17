@@ -1,5 +1,5 @@
 header{
-    background-color: #fdfdfd;
+    background-color: #e2e1e5;
     height: 10vh;
     box-shadow: 0 5px 30px rgb(0 22 84 / 10%);
     padding: 15px 0;
@@ -22,7 +22,7 @@ header a{
 }
 
 header a:hover{
-    color: #83c5be;
+    color: #2b6777;
 }
 
 header span{
@@ -66,12 +66,12 @@ header .small{
     top:10vh;
     left: 0;
     width: 100%;
-    background-color: #2b6777;
+    background-color: #e2e1e5;
     padding: 20px;
 }
 
-header a{
+header a li{
     display: inline-block;
     margin-bottom: 20px;
-    color: #2b6777;
+   
 }

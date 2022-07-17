@@ -11,27 +11,27 @@ export const featured =  [
     {
         cover:f1,
         name:"Family House",
-        total:"120"
+       
     },
     {
         cover:f2,
         name:"House & Villa",
-        total:"100"
+        
     },
     {
         cover:f3,
         name:"Appartment",
-        total:"450"
+       
     },
     {
         cover:f4,
         name:"Officce & Studio",
-        total:"250"
+       
     },
     {
         cover:f5,
         name:"Villa & Condo",
-        total:"200"
+        
     },
 ]
 

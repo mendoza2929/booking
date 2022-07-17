@@ -1,12 +1,13 @@
 import React from 'react'
 
-const Heading = ({title,subtitle}) => {
+const Heading = ({title,subtitle,sub}) => {
   return (
     <>
     
     <div className="heading">
       <h1>{title}</h1>
-       <p>{subtitle}</p>
+      <p>{sub}</p>
+       <h3>{subtitle}</h3>
     </div>
     
     </>
