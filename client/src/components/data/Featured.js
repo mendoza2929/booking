@@ -2,7 +2,7 @@ import f1 from '../img/f1.png'
 import f2 from '../img/f2.png'
 import f3 from '../img/f3.png'
 import f4 from '../img/f4.png'
-import f5 from '../img/f5.png'
+import f5 from '../img/f5'
 
 
 

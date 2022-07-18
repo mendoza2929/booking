@@ -1,7 +1,7 @@
 .location .box{
     position: relative;
     border-radius: 5px;
-    margin: 10px;
+    margin: 30px;
 }
 
 
@@ -26,23 +26,24 @@
     position: absolute;
     top:0;
     left: 0;
-    width: 650px;
-    height: 400px;
+    width: 350px;
+    height: 200px;
     background: rgb(15 28 47 / 30%);
     z-index: -1;
-    margin: 20px;
+    margin: 40px;
     border-radius: 5px;
+    
 }
 
 
 .location h5{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
 .location label{
     color: #fff;
-    margin-right: 20px;
+    margin-left:2px;
     opacity: 0.8;
 }
 

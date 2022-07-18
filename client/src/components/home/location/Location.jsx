@@ -9,7 +9,6 @@ import "./location.css"
 const Location = () => {
 
    const {data,loading,error} = useFetch("/hotels/countByCity?cities=cebu,manila,davao")
-    console.log(data)
   return (
    <>
 

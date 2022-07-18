@@ -2,12 +2,28 @@
    box-shadow: 0 0 20px 0 rgba(112 121 138 / 18%);
    border-radius: 6px;
    text-align: center;
-   padding: 30px;
+   padding: 50px;
    cursor: pointer;
+   margin-top: 10px;
+}
+
+.featured .box:hover{
+    background-color: #ff9144;
+    color: #fff;
+    transition: 0.5s;
 }
 
 .featured img{
-    width: 65px;
+    width: 50px;
     width: 65px;
     margin: auto;
 }
+
+.featured h4{
+    font-size: 15px;
+}
+
+.featured label{
+    font-size: 15px;
+}
+

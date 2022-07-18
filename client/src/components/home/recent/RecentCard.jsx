@@ -22,7 +22,7 @@ const RecentCard = () => {
                   </div>
                   <div className="button flex">
                       <div>
-                        <button className="btn2">₱{price}</button>
+                        <span>₱{price}</span>
                         <label>/day</label>
                       </div>
                       <button className='btn3'>Check Availability</button>
