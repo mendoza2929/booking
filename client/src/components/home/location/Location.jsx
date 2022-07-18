@@ -1,9 +1,15 @@
 import React from 'react'
 import Heading from '../../common/Heading'
-import { location } from '../../data/Explore'
+import l1 from '../.././img/explore1.jpg'
+import l2 from '../.././img/explore2.jpg'
+import l3 from '../.././img/explore3.jpg'
+import useFetch from '../../hooks/useFetch'
 import "./location.css"
 
 const Location = () => {
+
+   const {data,loading,error} = useFetch("/hotels/countByCity?cities=cebu,manila,davao")
+    console.log(data)
   return (
    <>
 
@@ -12,25 +18,57 @@ const Location = () => {
                 <Heading title="Explore more travel vacation rentals"/>
             </div> 
 
-            <div className="content grid3 mtop">
-                {
-                    location.map((items,index)=>{
-                        return(
-                            <div className="box" key={index}>
-                                <img src={items.cover} alt="" />
+           {loading ? "Loading Please Wait..." : <><div className="content grid3 mtop">
+            
+                   
+                            <div className="box">
+                                <img src={l1} alt="" />
                                 <div className="overlay">
-                                <h5>{items.name}</h5>
+                                <h5>Cebu</h5>
                                 <p>
-                                    <label>{items.villas}</label>
+
+                                    <label>{data[0]} Properties</label>
+                                    
+                                    {/* <label>{items.villas}</label>
                                     <label>{items.offices}</label>
-                                    <label>{items.appartment}</label>
+                                    <label>{items.appartment}</label> */}
                                 </p>
                                 </div>
-                            </div>
-                        )
-                    })
-                }
-            </div>
+                            </div> 
+                            
+                            <div className="box">
+                                <img src={l2} alt="" />
+                                <div className="overlay">
+                                <h5>Manila</h5>
+                                <p>
+
+                                    <label>{data[1]} Properties</label>
+                                    
+                                    {/* <label>{items.villas}</label>
+                                    <label>{items.offices}</label>
+                                    <label>{items.appartment}</label> */}
+                                </p>
+                                </div>
+                            </div> 
+                            
+                            <div className="box">
+                                <img src={l3} alt="" />
+                                <div className="overlay">
+                                <h5>Davao</h5>
+                                <p>
+
+                                    <label>{data[2]} Properties</label>
+                                    
+                                    {/* <label>{items.villas}</label>
+                                    <label>{items.offices}</label>
+                                    <label>{items.appartment}</label> */}
+                                </p>
+                                </div>
+                            </div> 
+                        
+                    
+                
+            </div></>}
         </section>
    
    </>

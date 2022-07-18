@@ -5,28 +5,34 @@ import l3 from '../img/explore6.webp'
 import l4 from '../img/explore7.jpg'
 import l5 from '../img/explore9.webp'
 import l6 from '../img/explore10.jpg'
-export const location=[
+
+
+
+
+
+export const location= [
     {
         cover:l1,
         name:"Cebu City",
-        villas:"10 Villas",
-        offices:"25 Office",
-        appartment:"250 Appartment"
+        // fetch:data[0]
     },
     {
         cover:l2,
         name:"Baguio City",
         villas:"10 Villas",
         offices:"25 Office",
-        appartment:"250 Appartment"
+        appartment:"250 Appartment",
+        // fetch:data[1]
     },
     {
         cover:l3,
         name:"Manila City",
         villas:"10 Villas",
         offices:"25 Office",
-        appartment:"250 Appartment"
+        appartment:"250 Appartment",
+        // fetch:data[3]
     },
+
     {
         cover:l4,   
         name:"Makati City",
@@ -49,3 +55,7 @@ export const location=[
         appartment:"250 Appartment"
     },
 ]
+
+
+export default location
+
