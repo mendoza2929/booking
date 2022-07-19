@@ -16,7 +16,7 @@ import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 const Footer = () => {
   return (
     <footer>
-    <Box px={{xs:2, sm:3}} py={{xs:3, sm:5}}>
+    <Box px={{xs:1, sm:2}} py={{xs:1, sm:2}}>
         <Container maxWidth="lg">
             <Grid container spacing={5}>
                 <Grid item xs={12} sm={4}>
@@ -28,41 +28,41 @@ const Footer = () => {
                     </p>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <Box borderBottom={1}  paddingTop={7}>  Socials</Box>
+                    <Box borderBottom={1}  paddingTop={5}>  Socials </Box>
                         <Box paddingTop={3}>
-                            <Link href='#' color='inherit' className='socials'>
-                            <LinkedInIcon/> LinkedIn
+                            <Link href='#' color='inherit' className='socials' style={{ textDecoration: 'none' }}>
+                            <LinkedInIcon className='icon 'style={{ fontSize: '12px' }}/> LinkedIn
                             </Link>
                         </Box>
                     <Box>
-                        <Link href='#' color='inherit' className='socials'>
-                        <FacebookIcon/> Facebook
+                        <Link href='#' color='inherit' className='socials' style={{ textDecoration: 'none' }}>
+                        <FacebookIcon className='icon' style={{ fontSize: '12px' }}/> Facebook
                         </Link>
                     </Box>
                     <Box>
-                        <Link href='#' color='inherit' className='socials'>
-                        <TwitterIcon/> Twitter
+                        <Link href='#' color='inherit' className='socials' style={{ textDecoration: 'none' }}>
+                        <TwitterIcon className='icon' style={{ fontSize: '12px' }}/> Twitter
                         </Link>
                     </Box>
                     <Box>
-                        <Link href='#' color='inherit' className='socials'>
-                        <YouTubeIcon/> Youtube
+                        <Link href='#' color='inherit' className='socials' style={{ textDecoration: 'none' }}>
+                        <YouTubeIcon className='icon' style={{ fontSize: '12px' }}/> Youtube
                         </Link>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                        <Box borderBottom={1} paddingTop={7}>Contact and Location</Box>
-                            <Box paddingTop={3}>
-                            <LocationOnIcon/> 31st St cor 2nd Ave BGC, Taguig
+                        <Box borderBottom={1} paddingTop={5}>Contact and Location</Box>
+                            <Box paddingTop={3} style={{ fontSize: '12px' }} paddingBottom={1}>
+                            <LocationOnIcon style={{ fontSize: '12px' }}/> 31st St cor 2nd Ave BGC, Taguig
                         </Box>  
-                        <Box>
-                            <CallIcon/> 08-123-4567
+                        <Box  style={{ fontSize: '12px' }} paddingBottom={1}>
+                            <CallIcon style={{ fontSize: '12px' }}/> 08-123-4567
                         </Box>
-                        <Box>
-                            <EmailIcon/> inquire@outplace.com
+                        <Box  style={{ fontSize: '12px' }} paddingBottom={1}>
+                            <EmailIcon style={{ fontSize: '12px' }}/> inquire@outplace.com
                     </Box>
-                    <Box>
-                            <AccessTimeFilledIcon/> Mon - Fri 8:00am - 5:00pm
+                    <Box  style={{ fontSize: '12px' }}>
+                            <AccessTimeFilledIcon style={{ fontSize: '12px' }}/> Mon - Fri 8:00am - 5:00pm
                         </Box>
                 </Grid>
             </Grid> 

@@ -2,8 +2,14 @@ h4{
     text-align: center;
  }
  
+ .socials{
+    font-size: 14px;
+ }
+
+
  .socials:hover{
      color: #ff9144;
+
  }
 .fLogo{
     height: 100px;
@@ -15,4 +21,5 @@ h4{
 
 p{
     text-align: center;
+    font-size: 14px;
 }
