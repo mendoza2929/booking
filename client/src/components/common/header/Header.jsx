@@ -7,6 +7,7 @@ import {FaBars} from 'react-icons/fa'
 import {BiExit} from 'react-icons/bi'
 import "./header.css"
 import { useState } from 'react'
+import logo from '../../img/logo.png'
 const Header = () => {
 
     const [navlist, setNavlist] = useState(false)
@@ -17,7 +18,7 @@ const Header = () => {
     <header>
         <div className="container flex">
             <div className="logo">
-                {/* <img src="" alt="" /> */} dotBooking
+             <Link to='/'><img src={logo} alt=""  />  </Link>
             </div>
             <div className="nav">
                 <ul className={navlist ?  "small" : 'flex'}>
