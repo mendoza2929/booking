@@ -9,6 +9,7 @@ import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import { AdapterDateFns } from '@mui/x-date-pickers-pro/AdapterDateFns';
 import Box from '@mui/material/Box';
 import { useLocation } from 'react-router-dom'
+import SearchItem from '../searchItem/SearchItem'
 const Search = () => {
 
   const location = useLocation()
@@ -92,7 +93,14 @@ const Search = () => {
             </div>
             <button>Search</button>
             </div>
-            <div className="listResult"></div>
+            <div className="listResult">
+              <SearchItem/>
+              <SearchItem/>
+              <SearchItem/>
+              <SearchItem/>
+              <SearchItem/>
+              <SearchItem/>
+            </div>
           </div>
         </div>
      </div>
