@@ -4,6 +4,7 @@ import Back from '.././common/Back'
 import img from '.././img/bg4.jpg'
 import {AiOutlineSend} from 'react-icons/ai'
 import Header from '../common/header/Header'
+// import {AiOutlineSend} from 'react-icons/ai'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
@@ -36,14 +37,15 @@ const Contact = () => {
         </div>
       
         <div className="container">
-            <form action="" className='shadow'>
+            <form action="" className='shadow contactForm'>
                 <span className='span'>Let's keep in touch!</span>
                 <div>
                     <input type="text" placeholder='Name'/>
                     <input type="email" placeholder='Email' />
                 </div>
                 <textarea name="" id="" cols="30" rows="10" placeholder='Inform us of your inquiries...'></textarea>
-                <button className='btn7'>Submit <i><AiOutlineSend/></i></button>
+                {/* <button className='btn7'>Submit</button> */}
+                <input type="submit" value='submit' className="btn7" />
             </form>
         </div>
       
