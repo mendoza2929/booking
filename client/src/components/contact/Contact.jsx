@@ -3,13 +3,14 @@ import "./contact.css"
 import Back from '.././common/Back'
 import img from '.././img/bg4.jpg'
 import {AiOutlineSend} from 'react-icons/ai'
+import Header from '../common/header/Header'
 const Contact = () => {
   return (
        <>
-       
+    <Header/>
        <section className="contact mb">
         <Back name='Contact Us' title='Get Helps & friendly Support' cover={img}/>
-      
+        
         <div className="container">
             <form action="" className='shadow'>
                 <h1>dotBooking</h1>

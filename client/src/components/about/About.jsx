@@ -6,10 +6,11 @@ import img from '.././img/bg2.jpg'
 import Heading from '../.././components/common/Heading'
 
 import "./about.css"
+import Header from '../common/header/Header'
 const About = () => {
   return (
    <>
-    
+    <Header/>
     <section className="about">
         <Back name='About US' title='Who We are' cover={img}/>
         <div className="container flex mtop">

@@ -10,6 +10,11 @@ export const nav = [
 
     },
     {
+        text: "services",
+        path:"/services"
+
+    },
+    {
         text: "contact",
         path:"/contact"
 

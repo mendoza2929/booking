@@ -14,17 +14,18 @@
 
 
 .hero .container{
-    padding-top: 15%;
+    padding-top: 10%;
 }
 
-form {
+.form {
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-top: 50px;
-    padding: 0 80px;
+    padding: 0 10px;
+   
 }
 
-form input{
+.form input{
     padding:20px;
     width: 100%;
     border:1px solid rgba(128,128,128,0.2);
@@ -33,8 +34,8 @@ form input{
    
 }
 
-form span{
-    font-size: 20px;
+.form span{
+    font-size: 15px;
     color: rgb(0, 0, 0);
    
 }
@@ -44,16 +45,16 @@ input::placeholder{
     color:black;
 }
 
-form .box{
-    padding:15px;
+.form .box{
+    padding:25px;
     border-left:1px solid rgba(128,128,128,0.2); ;
 }
 
-form .box:nth-child(1){
+.form .box:nth-child(1){
     border-left:none;
 }
 
-form h4{
+.form h4{
     font-weight: 500;
 }
 
@@ -62,19 +63,52 @@ form h4{
         padding-top: 15%;
     }
 
-    form {
+    .form {
         display: flex;
         flex-wrap:wrap ;
     }
 
-    form .box{
+    .form .box{
         border-left: none;
     }
 
-    form input {
+    .form input {
         width: 100%;
     }
 }
 
+.options{
+    position: absolute;
+    bottom:80px;
+    background-color: white;
+    color:grey;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.optionItem{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    
+}
+
+.optionCounter{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.optionCounterButton{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    
+}
+
+.optionCounterButton:disabled{
+    cursor: not-allowed;
+}
 
