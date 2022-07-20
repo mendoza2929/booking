@@ -1,31 +1,116 @@
-.about{
-    margin-bottom: 80px;
+.mainSection{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60vh;
 }
 
-.about .heading{
-    text-align: left;
-    width: 100%;
-    margin-bottom: 30px;
+.mainSection-1{
+    display: flex;
+    margin-top: 40px;
+    padding-top: 20px;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to right top, #78cee2, #5dc0ce, #43b2b9, #27a4a2, #01968b);
+    color: white;
 }
 
-.about p{
+.mainSection-2{
+    display: flex;
+    margin-top: 40px;
+    padding-top: 20px;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to right top, #78cee2, #5dc0ce, #43b2b9, #27a4a2, #01968b);
+    color: white;
+}
+
+.contentBox1{
+    width: 40%;
+    height: 200px;
+    padding-left:1em;
+}
+
+.contentBox1 h2{
+   font-size: 30px;
+   text-align: center;
+  color: white;
+  text-shadow: 2px 2px #ff9343;
+}
+
+.contentBox1 h5{
+    font-size: 15px;
+    text-align: center;
+    padding: 30px 0;
+ }
+
+ .contentBox{
+    width: 40%;
+    height: 200px;
+    padding-left:5em;
+}
+
+.contentBox h1{
     font-size: 20px;
-    padding-right: 30px;
-    margin-bottom: 20px;
-    line-height: 30px;
+    
+}
+.contentBox p{
+    font-size: 12px;
+    margin: 1em 0;
+    text-align: justify;
+    
 }
 
-@media  screen and (max-width:768px) {
-    .about .container{
+.aboutText{
+    font-size: 12px;
+}
+
+.imgContainer{
+    width: 50%;
+    padding-top: 50px;
+
+}
+.imgContainer img{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 2px 2px black;
+}
+
+@media  screen and (max-width:768px){
+    html{
+        font-size: 14px;
+
+    }
+    .mainSection{
         flex-direction: column;
     }
 
-    .about p{
-        padding:0;
+    .contentBox{
+        width: 90%;
+        margin: 200px auto 20px;
+        padding: 0;
     }
 
-    .about .container img{
-        margin-top: 50px;
+    .imgContainer{
+        width: 90%;
+        margin: auto 20px;
     }
+
+    .mainSection-1{
+        flex-direction: column;
+        margin-top: 250px;
+    }
+    .mainSection-2{
+        flex-direction: column;
+        margin-top: 250px;
+    }
+
+    .contentBox1 h2{
+        font-size: 20px;
+     }
+     .contentBox1 h5{
+         font-size: 10px;
+      }
 }
 
