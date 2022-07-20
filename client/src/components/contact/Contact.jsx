@@ -14,7 +14,6 @@ const Contact = () => {
        <>
     <Header/>
        <section className="contact mb">
-        <Back name='Contact Us' title='Get Helps & friendly Support' cover={img}/>
         
         <Back title='Get Helps & friendly Support' cover={img}/>
         
