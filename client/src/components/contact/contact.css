@@ -1,10 +1,6 @@
 
 .conctInfo{
-    height: 100%;
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
 }
 
 .contactText{
@@ -17,6 +13,7 @@
         padding: 10px;
         box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
         border-radius: 5px;
+        float: left; 
 }
 
 .loc:hover, .open:hover, .phone:hover, .email:hover {
@@ -24,17 +21,18 @@
     box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
   }
 
-.loc, .open, .phone, .email {
-    float: left;
-  }
-  
-.span{
+.spanContact{
     color: white;
+    font-size: 25px;
+}
+.inputContact{
+    margin-top: 15px;
 }
   .contactForm{
-    margin-top: 100px;
+    margin: 100px auto; 
     background-image: linear-gradient(to right top, #78cee2, #5dc0ce, #43b2b9, #27a4a2, #01968b);
-  }
+    width: 750px;
+}
 
 .contact form div{
     display: flex;
@@ -68,9 +66,7 @@
 .contact .btn7{
     padding-bottom: 10px;
     margin-bottom:10px;
-    
 }
-
 .btn7{
     background-color: #ff9343 ;
     color: white;
@@ -85,10 +81,16 @@
     }
 
     .contact form div{
-        flex-direction: column;
+        flex-direction: column; 
     }
 
     .contact input{
+        width: 100%;
+ 
+    }
+
+    .contactForm{
+        margin: 250px auto; 
         width: 100%;
     }
 }

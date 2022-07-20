@@ -2,9 +2,7 @@ import React from 'react'
 import "./contact.css"
 import Back from '.././common/Back'
 import img from '.././img/bg4.jpg'
-import {AiOutlineSend} from 'react-icons/ai'
 import Header from '../common/header/Header'
-// import {AiOutlineSend} from 'react-icons/ai'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
@@ -18,9 +16,8 @@ const Contact = () => {
         <Back title='Get Helps & friendly Support' cover={img}/>
         
         <div className='contactInfo'>
-            <form>
+            <form className='contactDetails'>
                 <div className='loc'>
-                    
                   <h5 className='contactText'> <LocationOnIcon style={{ fontSize: '20px' }}/> 31st St cor 2nd Ave BGC, Taguig</h5>
                 </div>
                 <div className='open'>
@@ -37,13 +34,12 @@ const Contact = () => {
       
         <div className="container">
             <form action="" className='shadow contactForm'>
-                <span className='span'>Let's keep in touch!</span>
-                <div>
+                <span className='spanContact'>Let's keep in touch!</span>
+                <div className='inputContact'>
                     <input type="text" placeholder='Name'/>
                     <input type="email" placeholder='Email' />
                 </div>
                 <textarea name="" id="" cols="30" rows="10" placeholder='Inform us of your inquiries...'></textarea>
-                {/* <button className='btn7'>Submit</button> */}
                 <input type="submit" value='submit' className="btn7" />
             </form>
         </div>
