@@ -30,7 +30,7 @@ const Hero = () => {
     const navigate = useNavigate()
 
     const handleSearch =()=>{
-        navigate("/search",{state:{destination,value,options}})
+        navigate("/hotels",{state:{destination,value,options}})
     }
 
     

@@ -1,16 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./searchItem.css"
-import s1 from '../img/explore3.jpg'
-const SearchItem = () => {
+
+const SearchItem = ({item}) => {
   return (
     <>
     
     <div className="sItem">
-        <img src={s1}alt="" className='sImg' />
+        <img src={item.photos[0]}alt="" className='sImg' />
         <div className="searchDesc">
-            <h1 className='stitle'>Cebu</h1>
-            <span className='sSubtitle'>Studio Type</span>
-            <span className='sFeatured'>Entire Studio 1 bathroom 21m 1 full bed</span>
+            <h1 className='stitle'>{item.name}</h1>
+            <span className='sFeatured'>{item.desc}</span>
             <span className='sCancel'>you can cancel later, so lock in this great price today!</span>
         </div>  
         <div className="searchDetails">
@@ -19,8 +19,10 @@ const SearchItem = () => {
                 <button>8.9</button>
             </div>
             <div className="sDetailsTexts">
-                <span className='sPrice'>₱300</span>
+                <span className='sPrice'>₱{item.cheapestPrice}</span>
+                <Link to={`/result/${item._id}`}>
                 <button className='sSearchButton'>See availability</button>
+                </Link>
             </div>
         </div>
     </div> 
