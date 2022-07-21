@@ -33,13 +33,12 @@
     font-size:25px;
   }
   
-  label{
+#logInLabel{
     padding-left: 35px;
-    padding-top: 10px;
   }
 
   .loginBox{
-      height: 600px;
+      height: 400px;
       padding: 20px;
       background-color: white;
       border-radius: 10px;
@@ -48,8 +47,8 @@
       justify-content: space-between;
   }
 
-  .registerHere{
-    font-size: 25px;
+  .logInHere{
+    font-size: 30px;
     padding-left: 30px;
   }
   
@@ -67,7 +66,6 @@
       outline: none;
   }
   
-
   .loginButton{
       height: 50px;
       border-radius: 5px;

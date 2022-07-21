@@ -4,7 +4,6 @@ import Header from '../common/header/Header'
 import Footer from '../home/footer/Footer'
 import './register.css'
 const Register = () => {
-    const usernameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
@@ -19,49 +18,43 @@ const Register = () => {
   return (
     <>
     <Header/>
-      <div className="login">
-      <div className="loginWrapper">
-        <div className="loginLeft">
-          <h3 className="loginLogo">OutPlace</h3>
-          <span className="loginDesc">
+      <div className="register">
+      <div className="registerWrapper">
+        <div className="registerLeft">
+          <h3 className="registerLogo">OutPlace</h3>
+          <span className="registerDesc">
             Discover new journeys <br></br> & experiences with us.
           </span>
         </div>
-        <div className="loginRight">
-          <form className="loginBox" onSubmit={handleClick}>
+        <div className="registerRight">
+          <form className="registerBox" onSubmit={handleClick}>
             <span className='registerHere'>Register here</span>
-            <label htmlFor="username">Username</label>
-            <input
-              required
-              ref={usernameRef}
-              className="loginInput"
-            />
-             <label htmlFor="email">Email</label>
+             <label id='registerLabel' htmlFor="email">Email</label>
             <input
               required
               ref={emailRef}
-              className="loginInput"
+              className="registerInput"
               type="email"
             />
-             <label htmlFor="password">Password</label>
+             <label id='registerLabel' htmlFor="password">Password</label>
             <input
               required
               ref={passwordRef}
-              className="loginInput"
+              className="registerInput"
               type="password"
               minLength="6"
             />
-            <label htmlFor="confirmPassword">Confirm Password</label>
+            <label id='registerLabel' htmlFor="confirmPassword">Confirm Password</label>
             <input
               required
               ref={confirmPasswordRef}
-              className="loginInput"
+              className="registerInput"
               type="password"
             />
-            <button className="loginButton" type="submit">
+            <button className="registerButton" type="submit">
               Register
             </button>
-            <div className='logInText'>Already have an account? <a href='/login'>Log In</a></div>
+            <div className='registerText'>Already have an account? <a href='/login'>Log In</a></div>
           </form>
         </div>
       </div>
