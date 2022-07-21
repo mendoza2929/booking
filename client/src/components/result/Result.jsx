@@ -1,46 +1,62 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useContext, useState} from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../common/header/Header'
 import useFetch from '../hooks/useFetch'
 import {ImLocation2} from 'react-icons/im'
-import f1 from '../.././components/img/explore1.jpg'
-import f2 from '../.././components/img/explore10.jpg'
-import f3 from '../.././components/img/explore10.jpg'
-import f4 from '../.././components/img/explore10.jpg'
+
 import "./result.css"
+import { SearchContext } from '../../context/SearchContext'
+import { AuthContext } from '../../context/AuthContext'
+import Reserve from '../reservation/Reserve'
 const Result = () => {
     const location = useLocation()
-    console.log(location)
-    const {data,loading,error} =useFetch(`/hotels`)
+    const id =location.pathname.split("/")[2]
 
-    const photos = [
-      {
-      cover:f1
-      },
-      {
-        cover:f2
-      },
-      {
-        cover:f3
-      },
-    ]
+    const [modal,setModal]=useState(false)
+    
+    const {data,loading,error} =useFetch(`/hotels/find/${id}`)
+
+    const {user} = useContext(AuthContext)
+
+    const navigate  = useNavigate()
+
+    const {value , options} = useContext(SearchContext)
+
+    const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+    function dayDifference(date1,date2){
+      const timeDiff = Math.abs(date2.getTime()- date1.getTime());
+      const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
+      return diffDays;
+    }
+
+    const days=(dayDifference(value[0], value[1]))
+
+
+    const handleClick = () =>{
+        if(user){
+          setModal(true)
+        }else{
+          navigate("/login")
+        }
+    }
+    
   return (
     <>
        <Header/>
-      <div className="hotelContainer">
+      {loading ? "loading" : <div className="hotelContainer">
         <div className="hotelWrapper">
           <button className='booknow'>Reserve or Book now!</button>
-          <h1 className="hotelTitle">Cebu</h1>
+          <h1 className="hotelTitle">{data.name}</h1>
             <div className="hotelAddress">
                 <i><ImLocation2/></i>
-                <span>Cebu</span>
+                <span>{data.address}</span>
             </div>
             <span className="hotelPrices">
-              Book a stay over ₱300 at this property 
+              Book a stay over ₱{data.cheapestPrice} at this property 
             </span>
             <div className="hotelImages">
               {
-                photos.map((photo)=>(
+                data.photos?.map((photo)=>(
                   
                     <div className="hoteImgWrapper">
                       <img src={photo.cover} alt="" className="hotelImg" />
@@ -51,25 +67,22 @@ const Result = () => {
             </div>
             <div className="hotelDetails">
               <div className="hotelDetailsText">
-                <h1 className='hotelTitle'>Cebu Hotel</h1>
+                <h1 className='hotelTitle'>{data.title}</h1>
                 <p className='hotelDesc'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                   Perspiciatis, impedit nam asperiores, fuga eveniet, aliquid quae excepturi
-                    labore distinctio praesentium cum. Quasi fuga reprehenderit eaque. 
-                    Ab voluptate doloribus accusamus cum!
+                  {data.desc}
                 </p>
               </div>
               <div className="hotelDeTailsPrice">
                     <h1>Located in Cebu</h1>
                     <h2>
-                      <b>₱300</b> (9 nights)
+                      <b>₱{days * data.cheapestPrice * options.room}</b> ({days}{""} Days)
                     </h2>
-                    <button>Reserve or Book Now!</button>
+                    <button onClick={handleClick}>Reserve or Book Now!</button>
               </div>
             </div>
         </div>
-      </div>
-
+      </div>}
+            {modal && <Reserve setOpen={setModal} hotelId={id}/>}
     </>
   )
 }

@@ -6,4 +6,3 @@ export const createError = (status, message)=>{
     err.message =message;
 }
 
-export default createError

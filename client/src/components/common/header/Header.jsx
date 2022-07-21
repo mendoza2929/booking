@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 // import logo from '../.././img/logo1.png'
 import {Link} from 'react-router-dom'
 import nav from '../../data/Data'
@@ -8,7 +8,10 @@ import {BiExit} from 'react-icons/bi'
 import "./header.css"
 import { useState } from 'react'
 import logo from '../../img/logo.png'
+import { AuthContext } from '../../../context/AuthContext'
 const Header = () => {
+
+    const {user} = useContext(AuthContext)
 
     const [navlist, setNavlist] = useState(false)
 
@@ -29,11 +32,14 @@ const Header = () => {
                      ))}
                 </ul>
             </div>
-            <div className="button flex">
+           {user ? user.username :<div className="button flex">
+                <button className="btn1">
+                    <i><BiLogIn/></i> Register
+                </button>
                 <button className="btn1">
                     <i><BiLogIn/></i> Login
                 </button>
-            </div>
+            </div>}
                     
             <div className="toggle">
                 <button onClick={()=>setNavlist(!navlist)}>

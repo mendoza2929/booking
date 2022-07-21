@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import TextField from '@mui/material/TextField';
 import { LocalizationProvider } from '@mui/x-date-pickers-pro';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
@@ -8,6 +8,8 @@ import {AiOutlineSearch} from 'react-icons/ai'
 import Heading from '../common/Heading';
 import { useNavigate } from 'react-router-dom';
 import Header from '../common/header/Header';
+import { SearchContext } from '../../context/SearchContext';
+import { AuthContext } from '../../context/AuthContext';
 const Hero = () => {
     const [value, setValue] = React.useState([null, null]);
     const [destination,setDestination] = useState("")
@@ -27,9 +29,18 @@ const Hero = () => {
         }})
     }
 
+
+    
+    const {dispatch} = useContext(SearchContext)
+
     const navigate = useNavigate()
 
+    const {user} = useContext(AuthContext)
+
+
+
     const handleSearch =()=>{
+        dispatch({type:"NEW_SEARCH" , payload:{destination,value,options}})
         navigate("/hotels",{state:{destination,value,options}})
     }
 
