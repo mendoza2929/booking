@@ -23,8 +23,8 @@ const Result = () => {
     const {value , options} = useContext(SearchContext)
 
     const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
-    function dayDifference(date1,date2){
-      const timeDiff = Math.abs(date2.getTime()- date1.getTime());
+    function dayDifference(date1, date2){
+      const timeDiff = Math.abs(date2.getTime() - date1.getTime());
       const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
       return diffDays;
     }
@@ -73,7 +73,7 @@ const Result = () => {
                 </p>
               </div>
               <div className="hotelDeTailsPrice">
-                    <h1>Located in Cebu</h1>
+                    <h1>Located in {data.address}</h1>
                     <h2>
                       <b>₱{days * data.cheapestPrice * options.room}</b> ({days}{""} Days)
                     </h2>
