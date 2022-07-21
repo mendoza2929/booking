@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
 
     const [credentials,setCredentials] = useState({
-        username:undefined,
+        email:undefined,
         password:undefined,
     })
 
@@ -27,7 +27,7 @@ const Login = () => {
         dispatch({type:"LOGIN_START"})
         try{
             const res = await axios.post("/auth/login",credentials)
-            dispatch({type:"LOGIN_SUCCESS",payload:res.data})
+            dispatch({type:"LOGIN_SUCCESS",payload:res.data.details})
             navigate("/")
         }catch(err){
             dispatch({type:"LOGIN_FAILURE",payload:err.response.data})
