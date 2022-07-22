@@ -9,26 +9,24 @@ import axios from "axios";
 
 const Datatable = () => {
 
-  // const location = useLocation()
-  // const path = location.pathname.split("/ ")[1];
+  const location = useLocation()
+  const path = location.pathname.split("/")[1];
 
-  //   const [list,setList] = useState();
+    const [list,setList] = useState();
 
   
-    const {data,loading,error} = useFetch(`/users`)
+    const {data, loading, error} = useFetch(`/${path}`)
  
 
-    // useEffect(()=>{
-    //   setList(data)
-    // },[data])
+    useEffect(()=>{
+      setList(data)
+    },[data]);
 
   const handleDelete = async (id) => {
-    // try{
-    //     await axios.delete(`/${path}/${id}`)
-    //     setList(list.filter((item) => item.id !== id));
-    // }catch(err){
-
-    // }
+    try{
+        await axios.delete(`/${path}/${id}`)
+        setList(list.filter((item) => item.id !== id));
+    }catch(err) {}
    
   };
 
@@ -64,12 +62,12 @@ const Datatable = () => {
       </div>
       <DataGrid
         className="datagrid"
-        rows={data}
+        rows={list}
         columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
-        getRowId={row=>row._id}
+        getRowId={(row) => row._id}
       />
     </div>
   );
