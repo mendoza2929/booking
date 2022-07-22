@@ -2,32 +2,25 @@ import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../datatablesource";
 import { Link, useLocation } from "react-router-dom";
-import useFetch from "../.././hooks/useFetch.js"
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
-const Datatable = () => {
-
-  const location = useLocation()
+const Datatable = ({columns}) => {
+  const location = useLocation();
   const path = location.pathname.split("/")[1];
+  const [list, setList] = useState("");
+  const { data, loading, error } = useFetch(`/${path}`);
 
-    const [list,setList] = useState();
-
-  
-    const {data, loading, error} = useFetch(`/${path}`)
- 
-
-    useEffect(()=>{
-      setList(data)
-    },[data]);
+  useEffect(() => {
+    setList(data);
+  }, [data]);
 
   const handleDelete = async (id) => {
-    try{
-        await axios.delete(`/${path}/${id}`)
-        setList(list.filter((item) => item.id !== id));
-    }catch(err) {}
-   
+    try {
+      await axios.delete(`/${path}/${id}`);
+      setList(list.filter((item) => item._id !== id));
+    } catch (err) {}
   };
 
   const actionColumn = [
@@ -55,8 +48,8 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
-        <Link to="/users/new" className="link">
+        {path}
+        <Link to={`/${path}/new`} className="link">
           Add New
         </Link>
       </div>
