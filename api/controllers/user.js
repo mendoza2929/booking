@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
+// const jwt = require("jsonwebtoken");
 const saltRounds = 10;
 
 export const updateUser = async (req, res, next) => {
@@ -45,6 +46,12 @@ export const getAllUser = async (req, res, next) => {
 export const createUser = async (req, res, next) => {
   //   console.log("Sample /Register Create User");
   //   console.log(req.body.password);
+  const { username, email, password, confirmPassword } = req.body;
+  if (!username || !email || !password || !confirmPassword) {
+    res.status(400);
+  } else if (password !== confirmPassword) {
+    throw Error("Passwords do not match!");
+  }
   const hashedPwd = await bcrypt.hash(req.body.password, saltRounds);
   //   console.log(hashedPwd);
   User.create(

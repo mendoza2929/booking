@@ -8,25 +8,23 @@ const Register = () => {
   
 
 
-    const [customerSignUp, setCustomerSignUp] = useState(
+    const [customerRegister, setCustomerRegister] = useState(
       { username: '' ,email: '', password: '', isAdmin: false,  confirmPassword: ''}
   );
 
   const handleChange = (event) => {
-      setCustomerSignUp({...customerSignUp, [event.target.name]: event.target.value})
+      setCustomerRegister({...customerRegister, [event.target.name]: event.target.value})
   }
 
   const handleSubmit = (e) => {
       e.preventDefault()
-      console.log(customerSignUp)
-      axios.post('http://localhost:8800/api/users/register', customerSignUp)
+      console.log(customerRegister)
+      axios.post('http://localhost:8800/api/auth/register', customerRegister)
         .then(function (response) {
             console.log(response)
-            console.log('sample try')
         })
         .catch(function (error) {
             console.log(error)
-            console.log('sample catch')
         })
       }
 
@@ -50,7 +48,7 @@ const Register = () => {
               className="registerInput"
               type="text"
               name="username" 
-              value={customerSignUp.username} 
+              value={customerRegister.username} 
               onChange={handleChange}
             />
              <label id='registerLabel' htmlFor="email">Email</label>
@@ -59,7 +57,7 @@ const Register = () => {
               className="registerInput"
               type="email"
               name="email" 
-              value={customerSignUp.email} 
+              value={customerRegister.email} 
               onChange={handleChange}
             />
              <label id='registerLabel' htmlFor="password">Password</label>
@@ -69,7 +67,7 @@ const Register = () => {
               type="password"
               minLength="6"
               name="password" 
-              value={customerSignUp.password} 
+              value={customerRegister.password} 
               onChange={handleChange}
             />
             <label id='registerLabel' htmlFor="confirmPassword">Confirm Password</label>
@@ -78,7 +76,7 @@ const Register = () => {
               className="registerInput"
               type="password"
               name="confirmPassword" 
-              value={customerSignUp.confirmPassword} 
+              value={customerRegister.confirmPassword} 
               onChange={handleChange}
             />
             <button className="registerButton" type="submit">
