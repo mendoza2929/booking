@@ -60,7 +60,8 @@ input::placeholder{
 
 @media screen and (max-width:768px) {
     .hero .container{
-        padding-top: 15%;
+        padding-top: 20%;
+        
     }
 
     .form {
@@ -76,6 +77,36 @@ input::placeholder{
         width: 100%;
     }
 }
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+    .hero .container{
+        padding-top: 0%
+        
+    }
+
+    .heading h3{
+        display: none;
+    }
+
+    .heading h1{
+        font-size: 40px;
+    }
+
+    
+
+    .form {
+        display: flex;
+        flex-wrap:wrap ;
+    }
+
+    .form .box{
+        border-left: none;
+    }
+
+    .form input {
+        width: 100%;
+    }
+ }
 
 .options{
     position: absolute;

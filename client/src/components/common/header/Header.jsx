@@ -6,6 +6,7 @@ import nav from '../../data/Data'
 import {BiLogIn} from 'react-icons/bi'
 import {FaBars} from 'react-icons/fa'
 import {BiExit} from 'react-icons/bi'
+
 import "./header.css"
 import { useState } from 'react'
 import logo from '../../img/logo.png'
@@ -59,7 +60,9 @@ const Header = () => {
             {
                 console.log('isLoggedIn User', isLoggedIn)
             }
-            {isLoggedIn ? <div className="b"> {user.username} <button className="btn1" onClick={handleSubmit}><a href="/logout">Logout</a></button></div> : <div className="b"><button className="btn1">Register</button><button className="btn1">Login</button></div>} 
+            {isLoggedIn ? <div className="b"> {user.username} <button className="btn1" onClick={handleSubmit}><a href="/logout">Logout</a></button></div> : <div className="b">
+                <Link to='/login'><button className="btn1">Login <i><BiLogIn className='btn-icon'/></i></button></Link>
+                </div>} 
             
 
             <div className="toggle">

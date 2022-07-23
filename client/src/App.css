@@ -53,6 +53,11 @@ button{
    
 }
 
+.btn1{
+    font-size: 15px;
+}
+
+
 button:hover{
     background-color:#ff9144;
     color: #fff;
@@ -145,6 +150,10 @@ img{
     
 }
 
+.btn1{
+    margin-bottom: 70px;
+    margin-left: 20px;
+}
 
 .btn2{
     border-radius: 50px;
