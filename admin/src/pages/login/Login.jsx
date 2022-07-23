@@ -1,11 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
 import { useContext } from 'react'
+import {GrUserAdmin} from 'react-icons/gr'
+
 // import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
-import "./login.scss"
+import "./login.css"
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
+import  {Col,Container,Row ,Form, FormGroup, FormText, Button} from 'react-bootstrap'
+
 
 const Login = () => {
 
@@ -32,7 +36,7 @@ const Login = () => {
               dispatch({type:"LOGIN_SUCCESS",payload:res.data.details})
               navigate("/")
             }else{
-              dispatch({type:"LOGIN_FAILURE",payload:{message:"You are not the admin!"}})
+              dispatch({type:"LOGIN_FAILURE",payload:{message:"You are not the administrator.!"}})
             }
         }catch(err){
             dispatch({type:"LOGIN_FAILURE",payload:err.response.data})
@@ -54,6 +58,44 @@ const Login = () => {
             {error && <span>{error.message}</span>}
         </div>
     </div>
+
+
+{/* 
+    <Container className="mt-5">
+        <Row>
+        <Col lg={4} mb={6} sm={12} className="text-center">
+            <GrUserAdmin className="admin-icon"/>
+                <Form>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Control type="email" placeholder="Enter your email address"/>
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Control type="password" placeholder="Enter your password"/>
+                    </Form.Group>
+
+                   
+
+                    <Button variant="primary btn-block" type="submit">
+                        Login
+                    </Button>
+
+
+                </Form>
+
+            </Col>
+
+            <Col lg={8} mb={6} sm={12}>
+                 
+            </Col>
+
+        </Row>
+    </Container> */}
+
+
+
+
+
    
    </>
   )

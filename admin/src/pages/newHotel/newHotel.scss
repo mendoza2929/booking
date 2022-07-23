@@ -40,6 +40,14 @@
           gap: 30px;
           justify-content: space-between;
 
+          .selectRooms{
+            width: 100%;
+
+            select{
+              width: 100%;
+            }
+          }
+
           .formInput {
             width: 40%;
 
@@ -63,6 +71,7 @@
 
           button {
             width: 150px;
+            height: 7.5vh;
             padding: 10px;
             border: none;
             background-color: teal;
