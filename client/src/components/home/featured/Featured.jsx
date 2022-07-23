@@ -10,7 +10,7 @@ import Heading from '../../common/Heading';
 import useFetch from '../../hooks/useFetch'
 // import FeaturedCard from './FeaturedCard';
 const Featured = () => {
-  const {data,loading,error} = useFetch("/hotels/countByType")
+  const {data,loading,error} = useFetch("/api/hotels/countByType")
 
   const item = [
     f1,f2,f3,f4,f5

@@ -8,7 +8,7 @@ import "./location.css"
 
 const Location = () => {
 
-   const {data,loading,error} = useFetch("/hotels/countByCity?cities=cebu,manila,davao")
+   const {data,loading,error} = useFetch("/api/hotels/countByCity?cities=cebu,manila,davao")
   return (
    <>
 
