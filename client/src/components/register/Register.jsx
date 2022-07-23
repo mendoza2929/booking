@@ -17,7 +17,7 @@ const Register = () => {
   const handleSubmit = (e) => {
       e.preventDefault()
       console.log(customerRegister)
-      axios.post('/api/auth/register', customerRegister)
+      axios.post('/auth/register', customerRegister)
         .then(function (response) {
             console.log(response)
         })

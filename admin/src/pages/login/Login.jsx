@@ -31,7 +31,7 @@ const Login = () => {
         e.preventDefault()
         dispatch({type:"LOGIN_START"})
         try{
-            const res = await axios.post("/api/auth/login",credentials)
+            const res = await axios.post("/auth/login",credentials)
             if(res.data.isAdmin){
               dispatch({type:"LOGIN_SUCCESS",payload:res.data.details})
               navigate("/")
@@ -43,63 +43,6 @@ const Login = () => {
         }
     }
 
-
-
-
-<<<<<<< HEAD
-  return (
-   <>
-   
-    <div className="login">
-        <div className="container">
-            <input type="text" placeholder="username" id="email" onChange={handlChange}/>
-            <input type="password" placeholder="password" id="password" onChange={handlChange}/>
-            <button disabled={loading} onClick={handleLogin}>login</button>
-            {error && <span>{error.message}</span>}
-        </div>
-    </div>
-
-
-{/* 
-    <Container className="mt-5">
-        <Row>
-        <Col lg={4} mb={6} sm={12} className="text-center">
-            <GrUserAdmin className="admin-icon"/>
-                <Form>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Control type="email" placeholder="Enter your email address"/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Control type="password" placeholder="Enter your password"/>
-                    </Form.Group>
-
-                   
-
-                    <Button variant="primary btn-block" type="submit">
-                        Login
-                    </Button>
-
-
-                </Form>
-
-            </Col>
-
-            <Col lg={8} mb={6} sm={12}>
-                 
-            </Col>
-
-        </Row>
-    </Container> */}
-
-
-
-
-
-   
-   </>
-  )
-=======
     return (
         <>
                 <div className="adminLogin">
@@ -141,10 +84,6 @@ const Login = () => {
 
         </>
     );
->>>>>>> 790cba32fdeffb92d6debc5381e1e33d6a8f2d32
 }
-    
-
-
 
 export default Login

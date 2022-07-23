@@ -47,7 +47,7 @@ const NewHotel = () => {
         ...info,rooms,photos:list,
       }
 
-      await axios.post("/api/hotels",newHotel)
+      await axios.post("/hotels",newHotel)
     }catch(err){
 
     }

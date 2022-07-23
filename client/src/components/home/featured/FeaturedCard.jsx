@@ -8,7 +8,7 @@
 
 // const FeaturedCard = () => {
 
-//     const {data,loading,error} = useFetch("/api/hotels/countByType")
+//     const {data,loading,error} = useFetch("/hotels/countByType")
 
 //     const items = [
 //        f1,f2,f3,f4,f5
