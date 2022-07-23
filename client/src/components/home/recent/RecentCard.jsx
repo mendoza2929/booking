@@ -4,7 +4,7 @@ import {GrLocation} from 'react-icons/gr'
 import useFetch from '../../hooks/useFetch'
 const RecentCard = () => {
  
-  const {data,loading,error} = useFetch("/hotels?featured=true&limit=3")
+  const {data,loading,error} = useFetch("/api/hotels?featured=true&limit=3")
 
   return (
     <>

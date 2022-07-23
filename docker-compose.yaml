@@ -11,7 +11,7 @@ services:
         - MONGO=mongodb+srv://dotbooking:dotbooking@cluster0.d4wqz.mongodb.net/?retryWrites=true&w=majority
         - JWT=lHvzT9sdx9zSeubtYcffIwfOY6qrDOe4
     ports:
-      - 'localhost:8800:8800'
+      - '8800:8800'
     networks:
       - app-network
   admin:
@@ -21,7 +21,7 @@ services:
       context: ./admin
       dockerfile: Dockerfile
     ports:
-      - 'localhost:3001:3000'
+      - '3001:3000'
     networks:
       - app-network
   client:
@@ -31,7 +31,7 @@ services:
       context: ./client
       dockerfile: Dockerfile
     ports:
-      - 'localhost:3000:3000'
+      - '3000:3000'
     networks:
       - app-network
 networks:
