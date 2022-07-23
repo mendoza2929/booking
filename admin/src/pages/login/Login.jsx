@@ -5,7 +5,7 @@ import {GrUserAdmin} from 'react-icons/gr'
 
 // import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
-import "./login.css"
+import "./login.scss"
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import  {Col,Container,Row ,Form, FormGroup, FormText, Button} from 'react-bootstrap'
@@ -43,63 +43,6 @@ const Login = () => {
         }
     }
 
-
-
-
-<<<<<<< HEAD
-  return (
-   <>
-   
-    <div className="login">
-        <div className="container">
-            <input type="text" placeholder="username" id="email" onChange={handlChange}/>
-            <input type="password" placeholder="password" id="password" onChange={handlChange}/>
-            <button disabled={loading} onClick={handleLogin}>login</button>
-            {error && <span>{error.message}</span>}
-        </div>
-    </div>
-
-
-{/* 
-    <Container className="mt-5">
-        <Row>
-        <Col lg={4} mb={6} sm={12} className="text-center">
-            <GrUserAdmin className="admin-icon"/>
-                <Form>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Control type="email" placeholder="Enter your email address"/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Control type="password" placeholder="Enter your password"/>
-                    </Form.Group>
-
-                   
-
-                    <Button variant="primary btn-block" type="submit">
-                        Login
-                    </Button>
-
-
-                </Form>
-
-            </Col>
-
-            <Col lg={8} mb={6} sm={12}>
-                 
-            </Col>
-
-        </Row>
-    </Container> */}
-
-
-
-
-
-   
-   </>
-  )
-=======
     return (
         <>
                 <div className="adminLogin">
@@ -141,10 +84,6 @@ const Login = () => {
 
         </>
     );
->>>>>>> 790cba32fdeffb92d6debc5381e1e33d6a8f2d32
 }
-    
-
-
 
 export default Login

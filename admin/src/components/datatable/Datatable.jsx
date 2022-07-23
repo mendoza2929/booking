@@ -6,35 +6,12 @@ import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
-const Datatable = ({columns}) => {
-<<<<<<< HEAD
-
-  const location = useLocation()
-=======
+const Datatable = ({ columns }) => {
   const location = useLocation();
->>>>>>> 790cba32fdeffb92d6debc5381e1e33d6a8f2d32
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState("");
   const { data, loading, error } = useFetch(`/${path}`);
 
-<<<<<<< HEAD
-    const [list,setList] = useState("");
-
-  
-    const {data, loading, error} = useFetch(`/${path}`)
- 
-
-      useEffect(()=>{
-        setList(data);
-      }, [data])
-
-      const handleDelete = async (id) => {
-        try {
-          await axios.delete(`/${path}/${id}`);
-          setList(list.filter((item) => item._id !== id));
-        } catch (err) {}
-      };
-=======
   useEffect(() => {
     setList(data);
   }, [data]);
@@ -45,7 +22,6 @@ const Datatable = ({columns}) => {
       setList(list.filter((item) => item._id !== id));
     } catch (err) {}
   };
->>>>>>> 790cba32fdeffb92d6debc5381e1e33d6a8f2d32
 
   const actionColumn = [
     {
@@ -72,11 +48,7 @@ const Datatable = ({columns}) => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-<<<<<<< HEAD
-     
-=======
         {path}
->>>>>>> 790cba32fdeffb92d6debc5381e1e33d6a8f2d32
         <Link to={`/${path}/new`} className="link">
           Add New
         </Link>
@@ -84,7 +56,7 @@ const Datatable = ({columns}) => {
       <DataGrid
         className="datagrid"
         rows={list}
-        columns={columns.concat(actionColumn)}
+        columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
