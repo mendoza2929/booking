@@ -6,9 +6,11 @@ import userRoute from "./api/routes/user.js";
 import hotelRoute from "./api/routes/hotels.js";
 import roomRoute from "./api/routes/rooms.js";
 import cookieParser from "cookie-parser";
+import MongoStore from "connect-mongo";
+import session from "express-session";
 import cors from "cors";
-const app = express();
 dotenv.config();
+const app = express();
 
 const connect = async () => {
   try {
@@ -25,10 +27,28 @@ app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 
+//sessions
+app.use(
+  session({
+    secret: "foo",
+    name: "session-id",
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGO,
+      // ttl: 1 * 1 * 1 * 60, // 1 minutes
+      resave: true,
+      saveUninitialized: false,
+      cookie: {
+        maxAge: 360000,
+      },
+    }),
+  })
+);
+
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/hotels", hotelRoute);
 app.use("/api/rooms", roomRoute);
+
 
 //error handlers
 app.use((err, req, res, next) => {
