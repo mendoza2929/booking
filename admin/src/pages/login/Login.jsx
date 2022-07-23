@@ -8,7 +8,7 @@ import axios from 'axios'
 import "./login.css"
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
-import  {Col,Container,Row ,Form, FormGroup, FormText, Button} from 'react-bootstrap'
+
 
 
 const Login = () => {
@@ -46,51 +46,52 @@ const Login = () => {
 
 
 
-<<<<<<< HEAD
   return (
    <>
    
-    <div className="login">
+    {/* <div className="login">
         <div className="container">
             <input type="text" placeholder="username" id="email" onChange={handlChange}/>
             <input type="password" placeholder="password" id="password" onChange={handlChange}/>
             <button disabled={loading} onClick={handleLogin}>login</button>
             {error && <span>{error.message}</span>}
         </div>
-    </div>
-
-
-{/* 
-    <Container className="mt-5">
-        <Row>
-        <Col lg={4} mb={6} sm={12} className="text-center">
-            <GrUserAdmin className="admin-icon"/>
-                <Form>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Control type="email" placeholder="Enter your email address"/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Control type="password" placeholder="Enter your password"/>
-                    </Form.Group>
-
-                   
-
-                    <Button variant="primary btn-block" type="submit">
-                        Login
-                    </Button>
-
-
-                </Form>
-
-            </Col>
-
-            <Col lg={8} mb={6} sm={12}>
-                 
-            </Col>
-
-        </Row>
-    </Container> */}
+    </div> */}
+    <div className="login">
+                    <div className="loginWrapper">
+                        <div className="loginLeft">
+                            <h3 className="loginLogo">OutPlace</h3>
+                            <span className="loginDesc">
+                            Ready for a new adventure?
+                            </span>
+                        </div>
+                    <div className="loginRight">
+                        <form className="loginBox" onSubmit={handleLogin}>
+                            <span className='logInHere'>Admin Log In</span>
+                            <label id='logInLabel' htmlFor="email">Email</label>
+                            <input
+                            required
+                            className="loginInput"
+                            onChange={handlChange}
+                            type="email"
+                            id='email'
+                            />
+                            <label id='logInLabel' htmlFor="password">Password</label>
+                            <input
+                                required
+                                className="loginInput"
+                                type="password"
+                                id='password'
+                                minLength="6"
+                                onChange={handlChange}
+                            />
+                              <button className="loginButton" disabled={loading} onClick={handleLogin}>login</button>
+                              {error && <span>{error.message}</span>}
+                          
+                        </form>
+                        </div>
+                    </div>
+                </div>
 
 
 
@@ -99,49 +100,6 @@ const Login = () => {
    
    </>
   )
-=======
-    return (
-        <>
-                <div className="adminLogin">
-                    <div className="aloginWrapper">
-                        <div className="aloginLeft">
-                            <h3 className="aloginLogo">OutPlace</h3>
-                            <span className="aloginDesc">
-                            </span>
-                        </div>
-                    <div className="aloginRight">
-                        <form className="aloginBox" onSubmit={handleLogin}>
-                            <span className='alogInHere'>Admin Log In</span>
-                            <label id='alogInLabel' htmlFor="email">Email</label>
-                            <input
-                            required
-                            className="aloginInput"
-                            onChange={handlChange}
-                            type="email"
-                            id='email'
-                            />
-                            <label id='alogInLabel' htmlFor="password">Password</label>
-                            <input
-                                required
-                                className="aloginInput"
-                                type="password"
-                                id='password'
-                                minLength="6"
-                                onChange={handlChange}
-                            />
-                            <button className="aloginButton" type="submit" disabled={loading}>
-                                Log In
-                            </button>
-                            {error && <span>{error.message}</span>}
-                            <div className='alogInText'>Don't have an account yet? <a href='/register'>Register</a></div>
-                        </form>
-                        </div>
-                    </div>
-                </div>
-
-        </>
-    );
->>>>>>> 790cba32fdeffb92d6debc5381e1e33d6a8f2d32
 }
     
 
