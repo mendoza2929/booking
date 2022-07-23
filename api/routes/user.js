@@ -37,9 +37,4 @@ router.get("/:id", verifyUser, getUser);
 
 router.get("/", verifyAdmin, getAllUser);
 
-//client CRUD
-
-// CREATE User
-router.post("/register", createUser);
-
 export default router;
