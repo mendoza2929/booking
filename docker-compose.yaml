@@ -3,6 +3,7 @@ version: '3.7'
 services:
   backend:
     container_name: booking-api
+    hostname: backend
     restart: on-failure
     build:
       context: ./
@@ -16,6 +17,7 @@ services:
       - app-network
   admin:
     container_name: booking-admin
+    hostname: admin
     restart: on-failure
     build:
       context: ./admin
@@ -26,6 +28,7 @@ services:
       - app-network
   client:
     container_name: booking-client
+    hostname: client
     restart: on-failure
     build:
       context: ./client
