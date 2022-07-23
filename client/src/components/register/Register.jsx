@@ -6,8 +6,6 @@ import Footer from '../home/footer/Footer'
 import './register.css'
 const Register = () => {
   
-
-
     const [customerRegister, setCustomerRegister] = useState(
       { username: '' ,email: '', password: '', isAdmin: false,  confirmPassword: ''}
   );
