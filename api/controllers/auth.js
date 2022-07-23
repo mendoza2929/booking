@@ -29,6 +29,19 @@ export const login = async (req, res, next) => {
       req.body.password,
       user.password
     );
+
+    if (isPasswordCorrect) {
+      const userSession = { email: user.email }; // creating user session to keep user loggedin also on refresh
+      console.log("User Session", userSession);
+      req.session.user = userSession; // attach user session to session object from express-session
+
+      console.log("Request Session User", req.session);
+
+      // return res
+      //   .status(200)
+      //   .json({ msg: "You have logged in successfully", userSession }); // attach user session id to the response. It will be transfer in the cookies
+    }
+
     if (!isPasswordCorrect)
       return next(createError(400, "Wrong password or email"));
 
@@ -40,6 +53,7 @@ export const login = async (req, res, next) => {
     const { password, isAdmin, ...otherDetails } = user._doc;
     res
       .cookie("access_token", token, {
+        maxAge: 360000,
         httpOnly: true,
       })
       .status(200)
@@ -47,6 +61,17 @@ export const login = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+};
+
+
+export const logout = async (req, res, next) => {
+  console.log("My Session", req.session);
+  req.session.destroy((error) => {
+    if (error) throw error;
+
+    res.clearCookie("session-id"); // cleaning the cookies from the user session
+    res.status(200).send("Logout Success");
+  });
 };
 
 export const createUser = async (req, res, next) => {
