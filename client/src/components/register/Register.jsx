@@ -6,8 +6,6 @@ import Footer from '../home/footer/Footer'
 import './register.css'
 const Register = () => {
   
-
-
     const [customerRegister, setCustomerRegister] = useState(
       { username: '' ,email: '', password: '', isAdmin: false,  confirmPassword: ''}
   );
@@ -19,7 +17,7 @@ const Register = () => {
   const handleSubmit = (e) => {
       e.preventDefault()
       console.log(customerRegister)
-      axios.post('http://localhost:8800/api/auth/register', customerRegister)
+      axios.post('/auth/register', customerRegister)
         .then(function (response) {
             console.log(response)
         })

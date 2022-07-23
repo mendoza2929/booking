@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  backend:
+    container_name: booking-api
+    hostname: backend
+    restart: on-failure
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+        - MONGO=mongodb+srv://dotbooking:dotbooking@cluster0.d4wqz.mongodb.net/?retryWrites=true&w=majority
+        - JWT=lHvzT9sdx9zSeubtYcffIwfOY6qrDOe4
+    ports:
+      - '8800:8800'
+    networks:
+      - app-network
+  admin:
+    container_name: booking-admin
+    hostname: admin
+    restart: on-failure
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    ports:
+      - '3001:3000'
+    networks:
+      - app-network
+  client:
+    container_name: booking-client
+    hostname: client
+    restart: on-failure
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    networks:
+      - app-network
+networks:
+    app-network:
+        driver: bridge

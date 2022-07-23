@@ -5,7 +5,7 @@ import {GrUserAdmin} from 'react-icons/gr'
 
 // import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
-import "./login.css"
+import "./login.scss"
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 
@@ -43,6 +43,7 @@ const Login = () => {
         }
     }
 
+<<<<<<< HEAD
 
 
 
@@ -72,27 +73,61 @@ const Login = () => {
                             <input
                             required
                             className="loginInput"
+=======
+    return (
+        <>
+                <div className="adminLogin">
+                    <div className="aloginWrapper">
+                        <div className="aloginLeft">
+                            <h3 className="aloginLogo">OutPlace</h3>
+                            <span className="aloginDesc">
+                            </span>
+                        </div>
+                    <div className="aloginRight">
+                        <form className="aloginBox" onSubmit={handleLogin}>
+                            <span className='alogInHere'>Admin Log In</span>
+                            <label id='alogInLabel' htmlFor="email">Email</label>
+                            <input
+                            required
+                            className="aloginInput"
+>>>>>>> bf853e170479b2c38469ea4b08c91919a152793f
                             onChange={handlChange}
                             type="email"
                             id='email'
                             />
+<<<<<<< HEAD
                             <label id='logInLabel' htmlFor="password">Password</label>
                             <input
                                 required
                                 className="loginInput"
+=======
+                            <label id='alogInLabel' htmlFor="password">Password</label>
+                            <input
+                                required
+                                className="aloginInput"
+>>>>>>> bf853e170479b2c38469ea4b08c91919a152793f
                                 type="password"
                                 id='password'
                                 minLength="6"
                                 onChange={handlChange}
                             />
+<<<<<<< HEAD
                               <button className="loginButton" disabled={loading} onClick={handleLogin}>login</button>
                               {error && <span>{error.message}</span>}
                           
+=======
+                            <button className="aloginButton" type="submit" disabled={loading}>
+                                Log In
+                            </button>
+                            {error && <span>{error.message}</span>}
+                            <div className='alogInText'>Don't have an account yet? <a href='/register'>Register</a></div>
+>>>>>>> bf853e170479b2c38469ea4b08c91919a152793f
                         </form>
                         </div>
                     </div>
                 </div>
 
+<<<<<<< HEAD
 
 
 
@@ -100,9 +135,10 @@ const Login = () => {
    
    </>
   )
+=======
+        </>
+    );
+>>>>>>> bf853e170479b2c38469ea4b08c91919a152793f
 }
-    
-
-
 
 export default Login
