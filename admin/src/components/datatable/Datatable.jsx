@@ -6,11 +6,7 @@ import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
-<<<<<<< HEAD
-const Datatable = ({columns}) => {
-=======
 const Datatable = ({ columns }) => {
->>>>>>> bf853e170479b2c38469ea4b08c91919a152793f
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState("");
@@ -52,11 +48,7 @@ const Datatable = ({ columns }) => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-<<<<<<< HEAD
-        
-=======
         {path}
->>>>>>> bf853e170479b2c38469ea4b08c91919a152793f
         <Link to={`/${path}/new`} className="link">
           Add New
         </Link>
