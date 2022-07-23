@@ -1,0 +1,89 @@
+.adminLogin {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right top, #ffb782, #ffae72, #ffa563, #ff9c53, #ff9343);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .aloginWrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+  }
+  
+  .aloginLeft,
+  .aloginRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .aloginLogo {
+    font-size: 70px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #ff9343;
+  }
+  
+  .aloginDesc {
+    font-size:25px;
+  }
+  
+#alogInLabel{
+    padding-left: 35px;
+  }
+
+  .aloginBox{
+      height: 400px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .alogInHere{
+    font-size: 30px;
+    padding-left: 30px;
+  }
+  
+  .aloginInput{
+      height: 50px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      font-size: 18px;
+      padding-left: 20px;
+      width: 380px;
+      margin: 0 auto;
+  }
+  
+  .aloginInput:focus{
+      outline: none;
+  }
+  
+  .aloginButton{
+      height: 50px;
+      border-radius: 5px;
+      border: solid 2px #3ab1b5;
+      background-color: #3ab1b5 ;
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      width: 400px;
+      margin: 15px auto;
+      cursor: pointer;
+  }
+  
+  .alogInText{
+    font-size: 15px;
+    text-align: center;
+}
+a{
+    text-decoration: underline;
+    color: #1775ee;
+}

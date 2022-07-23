@@ -44,9 +44,9 @@ const Login = () => {
     }
 
 
-  
 
 
+<<<<<<< HEAD
   return (
    <>
    
@@ -99,6 +99,52 @@ const Login = () => {
    
    </>
   )
+=======
+    return (
+        <>
+                <div className="adminLogin">
+                    <div className="aloginWrapper">
+                        <div className="aloginLeft">
+                            <h3 className="aloginLogo">OutPlace</h3>
+                            <span className="aloginDesc">
+                            </span>
+                        </div>
+                    <div className="aloginRight">
+                        <form className="aloginBox" onSubmit={handleLogin}>
+                            <span className='alogInHere'>Admin Log In</span>
+                            <label id='alogInLabel' htmlFor="email">Email</label>
+                            <input
+                            required
+                            className="aloginInput"
+                            onChange={handlChange}
+                            type="email"
+                            id='email'
+                            />
+                            <label id='alogInLabel' htmlFor="password">Password</label>
+                            <input
+                                required
+                                className="aloginInput"
+                                type="password"
+                                id='password'
+                                minLength="6"
+                                onChange={handlChange}
+                            />
+                            <button className="aloginButton" type="submit" disabled={loading}>
+                                Log In
+                            </button>
+                            {error && <span>{error.message}</span>}
+                            <div className='alogInText'>Don't have an account yet? <a href='/register'>Register</a></div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+
+        </>
+    );
+>>>>>>> 790cba32fdeffb92d6debc5381e1e33d6a8f2d32
 }
+    
+
+
 
 export default Login
