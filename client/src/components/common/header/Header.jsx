@@ -3,7 +3,7 @@ import axios from 'axios';
 // import logo from '../.././img/logo1.png'
 import {Link} from 'react-router-dom'
 import nav from '../../data/Data'
-import {BiLogIn} from 'react-icons/bi'
+// import {BiLogIn} from 'react-icons/bi'
 import {FaBars} from 'react-icons/fa'
 import {BiExit} from 'react-icons/bi'
 
@@ -13,7 +13,7 @@ import logo from '../../img/logo.png'
 import { AuthContext } from '../../../context/AuthContext'
 const Header = () => {
 
-    const {user} = useContext(AuthContext);
+    const { user, dispatch } = useContext(AuthContext);
 
     const [navlist, setNavlist] = useState(false);
 
@@ -32,13 +32,14 @@ const Header = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.get('http://localhost:8800/api/auth/logout')
+        axios.delete('/auth/logout')
           .then(function (response) {
               console.log(response)
           })
           .catch(function (error) {
               console.log(error)
           })
+          dispatch({ type: "LOGOUT" });
         }
 
   return (

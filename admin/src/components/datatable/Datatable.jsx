@@ -66,4 +66,5 @@ const Datatable = ({ columns }) => {
   );
 };
 
+
 export default Datatable;
