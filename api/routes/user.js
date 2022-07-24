@@ -23,10 +23,7 @@ router.get("/checkadmin/:id", verifyAdmin, (req, res, next) => {
 
 //update
 router.put("/:id", verifyUser, updateUser);
-
-//updateProfile
-
-
+  
 
 //delete
 
