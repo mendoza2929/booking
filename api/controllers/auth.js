@@ -11,21 +11,25 @@ export const register = async (req, res, next) => {
 
     // console.log("Sample /Register Create User");
     // console.log("Password",req.body);
-
-    if (!username || !email || !password || !confirmPassword) {
-      res.status(400).json({ msg: "Something missing" });
-    } 
-    if (password !== confirmPassword) {
+    const user = await User.findOne({ email });
+    console.log("user", user);
+    if (user) { 
+      return res.status(400).send("User already exists");
+    } else if (!username || !email || !password || !confirmPassword) {
+      res.status(400).send("Something missing");
+    } else if (password !== confirmPassword) {
       res.status(400).send("Passwords do not match!");
+    } else {
+      const newUSer = new User({
+        ...req.body,
+        password: hash,
+      });
+
+      await newUSer.save();
+      res.status(200).send("User has been Created");
     }
 
-    const newUSer = new User({
-      ...req.body,
-      password: hash,
-    });
 
-    await newUSer.save();
-    res.status(200).send("User has been Created");
   } catch (err) {
     next(err);
   }

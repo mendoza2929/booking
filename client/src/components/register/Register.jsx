@@ -25,6 +25,16 @@ const Register = () => {
         button: "Register!",
       });
     }
+
+  const showExist = () => {
+    swal({
+      title: "Error User already exist!",
+      text: "Error Please try again!!",
+      icon: "error",
+      button: "Register!",
+    });
+  };
+  
   
     const [customerRegister, setCustomerRegister] = useState(
       { username: '' ,email: '', password: '', isAdmin: false,  confirmPassword: ''}
@@ -38,14 +48,16 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(customerRegister);
+      // console.log(customerRegister);
       const res = await axios.post("/auth/register", customerRegister)
       if ( res.status === 200 ) {
         showAlert();
         navigate("/login");
       } 
     } catch (e) {
-      showError();
+      console.log("response", e.response.data);
+      if (e.response.data === "User already exists") showExist();
+      if (e.response.data === "Passwords do not match!") showError();
     }
   }
 
