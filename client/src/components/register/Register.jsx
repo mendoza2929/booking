@@ -4,7 +4,18 @@ import axios from 'axios';
 import Header from '../common/header/Header'
 import Footer from '../home/footer/Footer'
 import './register.css'
+import swal from 'sweetalert'
+import { useNavigate } from 'react-router-dom';
 const Register = () => {
+
+  const showAlert = () => {
+    swal({
+        title: "Good job!",
+        text: "You successfully Register!",
+        icon: "success",
+        button: "Register!",
+      });
+}
   
     const [customerRegister, setCustomerRegister] = useState(
       { username: '' ,email: '', password: '', isAdmin: false,  confirmPassword: ''}
@@ -13,6 +24,8 @@ const Register = () => {
   const handleChange = (event) => {
       setCustomerRegister({...customerRegister, [event.target.name]: event.target.value})
   }
+  const navigate  = useNavigate()
+
 
   const handleSubmit = (e) => {
       e.preventDefault()
@@ -21,6 +34,8 @@ const Register = () => {
         .then(function (response) {
             console.log(response)
         })
+      navigate("/login")
+      
         .catch(function (error) {
             console.log(error)
         })
@@ -77,7 +92,7 @@ const Register = () => {
               value={customerRegister.confirmPassword} 
               onChange={handleChange}
             />
-            <button className="registerButton" type="submit">
+            <button onClick={showAlert} className="registerButton" type="submit">
               Register
             </button>
             <div className='registerText'>Already have an account? <a href='/login'>Log In</a></div>

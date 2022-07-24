@@ -8,18 +8,21 @@ import axios from 'axios'
 import "./login.scss"
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
-import {
-  Col,
-  Container,
-  Row,
-  Form,
-  FormGroup,
-  FormText,
-  Button,
-} from "react-bootstrap";
-
+import swal from 'sweetalert'
 
 const Login = () => {
+
+    
+    const showAlert = () => {
+        swal({
+            title: "Good job Admin!",
+            text: "Welcome Back Admin!",
+            icon: "success",
+            button: "Admin!",
+          });
+    }
+
+
 
     const [credentials,setCredentials] = useState({
         email:undefined,
@@ -80,7 +83,7 @@ const Login = () => {
                                 minLength="6"
                                 onChange={handlChange}
                             />
-                            <button className="aloginButton" type="submit" disabled={loading}>
+                            <button onClick={showAlert} className="aloginButton" type="submit" disabled={loading}>
                                 Log In
                             </button>
                             {error && <span>{error.message}</span>}
