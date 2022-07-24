@@ -8,6 +8,7 @@ import Search from "./components/search/Search";
 import Result from "./components/result/Result";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
+import Profile from "./components/userprofile/Profile";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/result/:id" element={<Result />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
         </Routes>
       </BrowserRouter>
     </>

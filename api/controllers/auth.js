@@ -63,7 +63,6 @@ export const login = async (req, res, next) => {
   }
 };
 
-
 export const logout = async (req, res, next) => {
   console.log("My Session", req.session);
   req.session.destroy((error) => {

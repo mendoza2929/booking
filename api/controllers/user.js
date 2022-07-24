@@ -4,10 +4,12 @@ import bcrypt from "bcryptjs";
 const saltRounds = 10;
 
 export const updateUser = async (req, res, next) => {
+  console.log("request", req.body.password);
+  const hashedPwd = await bcrypt.hash(req.body.password, saltRounds);
   try {
     const updateUser = await User.findByIdAndUpdate(
       req.params.id,
-      { $set: req.body },
+      { password: hashedPwd },
       { new: true }
     );
     res.status(200).json(updateUser);
