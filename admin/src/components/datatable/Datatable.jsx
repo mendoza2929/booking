@@ -64,7 +64,7 @@ const Datatable = ({ columns }) => {
                 isRoom
                   ? handleRoomDelete(
                       params.row._id,
-                      params.hotelColumns.row._id
+                      '62db8dc312ca69f6bd7e0384' //temp fix
                     )
                   : handleDelete(params.row._id)
               }

@@ -1,10 +1,10 @@
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import axios from 'axios';
 import { Tabs } from 'antd';
 import 'antd/dist/antd.css'; 
 import Header from '../common/header/Header';
 // import Footer from '../home/footer/Footer'
-import useFetch from '../../components/hooks/useFetch'
+// import useFetch from '../../components/hooks/useFetch'
 import { AuthContext } from '../../context/AuthContext'
 import "./profile.css";
 
@@ -13,9 +13,8 @@ import "./profile.css";
 
 const { TabPane } = Tabs;
 const Profile = () => {
-    const [list, setList] = useState("");
     // const { data, loading, error } = useFetch(`/profile`);
-    const { user, dispatch } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [passwordUpdate, setPasswordUpdate] = useState(
         { password: '', confirmPassword: ''}
     );
