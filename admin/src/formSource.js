@@ -21,7 +21,7 @@ export const userInputs = [
     id: "password",
     label: "Password",
     type: "password",
-    placeholder:"********"
+    placeholder: "********",
   },
 
   {
@@ -31,7 +31,6 @@ export const userInputs = [
     placeholder: "destination",
   },
 ];
-
 
 export const hotelInputs = [
   {
@@ -78,29 +77,29 @@ export const hotelInputs = [
   },
 ];
 
-// export const roomInputs = [
-//   {
-//     id: "title",
-//     label: "Title",
-//     type: "text",
-//     placeholder: "2 bed room",
-//   },
-//   {
-//     id: "desc",
-//     label: "Description",
-//     type: "text",
-//     placeholder: "King size bed, 1 bathroom",
-//   },
-//   {
-//     id: "price",
-//     label: "Price",
-//     type: "number",
-//     placeholder: "100",
-//   },
-//   {
-//     id: "maxPeople",
-//     label: "Max People",
-//     type: "number",
-//     placeholder: "2",
-//   },
-// ];
+export const roomInputs = [
+  {
+    id: "title",
+    label: "Title",
+    type: "text",
+    placeholder: "2 bed room",
+  },
+  {
+    id: "desc",
+    label: "Description",
+    type: "text",
+    placeholder: "King size bed, 1 bathroom",
+  },
+  {
+    id: "price",
+    label: "Price",
+    type: "number",
+    placeholder: "100",
+  },
+  {
+    id: "maxPeople",
+    label: "Max People",
+    type: "number",
+    placeholder: "2",
+  },
+];
