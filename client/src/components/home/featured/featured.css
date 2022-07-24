@@ -58,3 +58,11 @@
         margin-top: 10px;
      }
 }
+
+@media all and (max-width: 480px) { 
+    .grid5{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }   
+}
+ 

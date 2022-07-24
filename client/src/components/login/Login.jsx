@@ -7,8 +7,18 @@ import "./login.css"
 import { useNavigate } from 'react-router-dom'
 import Header from '../common/header/Header'
 import Footer from '../home/footer/Footer'
+import swal from 'sweetalert'
 
 const Login = () => {
+
+ const showAlert = () => {
+        swal({
+            title: "Good job!",
+            text: "You successfully login!",
+            icon: "success",
+            button: "Login!",
+          });
+    }
 
     const [credentials,setCredentials] = useState({
         email:undefined,
@@ -68,7 +78,7 @@ const Login = () => {
                                 minLength="6"
                                 onChange={handlChange}
                             />
-                            <button className="loginButton" type="submit" disabled={loading}>
+                            <button onClick={showAlert} className="loginButton" type="submit" disabled={loading}>
                                 Log In
                             </button>
                             {error && <span>{error.message}</span>}

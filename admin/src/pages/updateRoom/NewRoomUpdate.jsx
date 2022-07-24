@@ -1,18 +1,13 @@
-import "./newHotel.scss";
+import "./newUpdate.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom'
 import { hotelInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
-const NewHotel = () => {
-
-
-
-
+const NewRoomUpdate = () => {
   const [files, setFiles] = useState("");
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
@@ -31,9 +26,7 @@ const NewHotel = () => {
     setRooms(value);
   };
   
-  // console.log(files)
-
-  const navigate  = useNavigate()
+  console.log(files)
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -60,7 +53,6 @@ const NewHotel = () => {
       };
 
       await axios.post("/hotels", newhotel);
-      navigate("/hotels")
     } catch (err) {console.log(err)}
   };
   return (
@@ -128,7 +120,7 @@ const NewHotel = () => {
                       ))}
                 </select>
               </div>
-              <button onClick={handleClick}>Send</button>
+              <button onClick={handleClick}>Update</button>
             </form>
           </div>
         </div>
@@ -137,4 +129,4 @@ const NewHotel = () => {
   );
 };
 
-export default NewHotel;
+export default NewRoomUpdate;
