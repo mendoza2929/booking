@@ -26,4 +26,35 @@
 .featured label{
     font-size: 15px;
 }
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+.grid5{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}   
+.featured .box{
+    box-shadow: 0 0 20px 0 rgba(112 121 138 / 18%);
+    border-radius: 6px;
+    text-align: center;
+    padding: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+ }
+ 
+}
 
+
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    .grid5{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }   
+    .featured .box{
+        box-shadow: 0 0 20px 0 rgba(112 121 138 / 18%);
+        border-radius: 6px;
+        text-align: center;
+        padding: 50px;
+        cursor: pointer;
+        margin-top: 10px;
+     }
+}
