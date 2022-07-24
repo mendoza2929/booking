@@ -42,37 +42,59 @@ const Header = () => {
         }
 
   return (
-   <>
-    <header>
+    <>
+      <header>
         <div className="container flex">
-            <div className="logo">
-             <Link to='/'><img src={logo} alt=""  />  </Link>
+          <div className="logo">
+            <Link to="/">
+              <img src={logo} alt="" />{" "}
+            </Link>
+          </div>
+          <div className="nav">
+            <ul className={navlist ? "small" : "flex"}>
+              {nav.map((list, index) => (
+                <li key={index}>
+                  <Link to={list.path}>{list.text}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {console.log("isLoggedIn User", isLoggedIn)}
+          {isLoggedIn ? (
+            <div className="b">
+              {" "}
+              {user.username}{" "}
+              <button className="btn1" onClick={handleSubmit}>
+                <a href="/logout">Logout</a>
+              </button>
             </div>
-            <div className="nav">
-                <ul className={navlist ?  "small" : 'flex'}>
-                     {nav.map((list,index)=>(
-                        <li key={index}>
-                            <Link to={list.path}>{list.text}</Link>
-                        </li>
-                     ))}
-                </ul>
+          ) : (
+            <div className="b">
+              <button className="btn1">
+                <a href="/register">Register</a>
+              </button>
+              <button className="btn1">
+                <a href="/login">Login</a>
+              </button>
             </div>
-            {
-                console.log('isLoggedIn User', isLoggedIn)
-            }
-            {isLoggedIn ? <div className="b"> {user.username} <button className="btn1" onClick={handleSubmit}><a href="/logout">Logout</a></button></div> : <div className="b"><button className="btn1">Register</button><button className="btn1">Login</button></div>} 
-            
+          )}
 
-            <div className="toggle">
-                <button onClick={()=>setNavlist(!navlist)}>
-                    {navlist? <i><BiExit/></i> : <i><FaBars/></i> }
-                </button>
-            </div>
-
+          <div className="toggle">
+            <button onClick={() => setNavlist(!navlist)}>
+              {navlist ? (
+                <i>
+                  <BiExit />
+                </i>
+              ) : (
+                <i>
+                  <FaBars />
+                </i>
+              )}
+            </button>
+          </div>
         </div>
-    </header>
-   
-   </>
-  )
+      </header>
+    </>
+  );
 }
 export default Header
