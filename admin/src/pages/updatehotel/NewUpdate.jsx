@@ -14,6 +14,9 @@ const NewUpdate = () => {
 
   const { data, loading, error } = useFetch("/rooms");
 
+  const hotelId = useFetch("/hotels");
+  console.log("SAMPLE", hotelId.data[0]);
+
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
@@ -51,7 +54,7 @@ const NewUpdate = () => {
         rooms,
         photos: list,
       };
-
+      
       await axios.post("/hotels", newhotel);
     } catch (err) {console.log(err)}
   };

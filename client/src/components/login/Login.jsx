@@ -20,6 +20,15 @@ const Login = () => {
           });
     }
 
+     const showError = () => {
+       swal({
+         title: "Error Login!",
+         text: "Please try again!",
+         icon: "error",
+         button: "Login!",
+       });
+     };
+
     const [credentials,setCredentials] = useState({
         email:undefined,
         password:undefined,
@@ -30,7 +39,7 @@ const Login = () => {
 
     const navigate  = useNavigate()
 
-    const handlChange = (e)=>{
+    const handleChange = (e)=>{
         setCredentials((prev)=>({...prev,[e.target.id]:e.target.value}))
     }
 
@@ -41,55 +50,64 @@ const Login = () => {
             const res = await axios.post("/auth/login",credentials)
             dispatch({type:"LOGIN_SUCCESS",payload:res.data.details})
             navigate("/")
+            showAlert();
         }catch(err){
             dispatch({type:"LOGIN_FAILURE",payload:err.response.data})
+            showError();
         }
     }
 
 
     return (
-        <>
-            <Header/>
-                <div className="login">
-                    <div className="loginWrapper">
-                        <div className="loginLeft">
-                            <h3 className="loginLogo">OutPlace</h3>
-                            <span className="loginDesc">
-                            Ready for a new adventure?
-                            </span>
-                        </div>
-                    <div className="loginRight">
-                        <form className="loginBox" onSubmit={handleLogin}>
-                            <span className='logInHere'>User Log In</span>
-                            <label id='logInLabel' htmlFor="email">Email</label>
-                            <input
-                            required
-                            className="loginInput"
-                            onChange={handlChange}
-                            type="email"
-                            id='email'
-                            />
-                            <label id='logInLabel' htmlFor="password">Password</label>
-                            <input
-                                required
-                                className="loginInput"
-                                type="password"
-                                id='password'
-                                minLength="6"
-                                onChange={handlChange}
-                            />
-                            <button onClick={showAlert} className="loginButton" type="submit" disabled={loading}>
-                                Log In
-                            </button>
-                            {error && <span>{error.message}</span>}
-                            <div className='logInText'>Don't have an account yet? <a href='/register'>Register</a></div>
-                        </form>
-                        </div>
-                    </div>
+      <>
+        <Header />
+        <div className="login">
+          <div className="loginWrapper">
+            <div className="loginLeft">
+              <h3 className="loginLogo">OutPlace</h3>
+              <span className="loginDesc">Ready for a new adventure?</span>
+            </div>
+            <div className="loginRight">
+              <form className="loginBox" onSubmit={handleLogin}>
+                <span className="logInHere">User Log In</span>
+                <label id="logInLabel" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  required
+                  className="loginInput"
+                  onChange={handleChange}
+                  type="email"
+                  id="email"
+                />
+                <label id="logInLabel" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  required
+                  className="loginInput"
+                  type="password"
+                  id="password"
+                  minLength="6"
+                  onChange={handleChange}
+                />
+                <button
+                  className="loginButton"
+                  type="submit"
+                  disabled={loading}
+                >
+                  Log In
+                </button>
+                {error && <span>{error.message}</span>}
+                <div className="logInText">
+                  Don't have an account yet? <a href="/register">Register</a>
                 </div>
-            <Footer/>
-
-        </>
+              </form>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </>
     );
 }
     

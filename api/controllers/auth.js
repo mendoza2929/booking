@@ -5,8 +5,19 @@ import jwt from "jsonwebtoken";
 
 export const register = async (req, res, next) => {
   try {
+    const { username, email, password, confirmPassword } = req.body;
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
+
+    // console.log("Sample /Register Create User");
+    // console.log("Password",req.body);
+
+    if (!username || !email || !password || !confirmPassword) {
+      res.status(400).json({ msg: "Something missing" });
+    } 
+    if (password !== confirmPassword) {
+      res.status(400).send("Passwords do not match!");
+    }
 
     const newUSer = new User({
       ...req.body,
@@ -71,32 +82,4 @@ export const logout = async (req, res, next) => {
     res.clearCookie("session-id"); // cleaning the cookies from the user session
     res.status(200).send("Logout Success");
   });
-};
-
-export const createUser = async (req, res, next) => {
-  //   console.log("Sample /Register Create User");
-  //   console.log(req.body.password);
-  const { username, email, password, confirmPassword } = req.body;
-  if (!username || !email || !password || !confirmPassword) {
-    res.status(400);
-  } else if (password !== confirmPassword) {
-    throw Error("Passwords do not match!");
-  }
-  const hashedPwd = await bcrypt.hash(req.body.password, saltRounds);
-  //   console.log(hashedPwd);
-  User.create(
-    {
-      username: req.body.username,
-      email: req.body.email,
-      password: hashedPwd,
-    },
-    (error, data) => {
-      if (error) {
-        return next(error);
-      } else {
-        console.log(data);
-        res.json(data);
-      }
-    }
-  );
 };
