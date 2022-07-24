@@ -77,9 +77,10 @@ const Header = () => {
             <div className="b">
               {" "}
               <a href="/profile">{user.username}</a>{" "}
-              <button className="btn1" onClick={handleSubmit}>
-                <a href="/logout">Logout</a>
-              </button>
+              <Link to="/logout">
+              <button className="btn-logout" onClick={handleSubmit}>
+              Logout
+              </button> </Link>
             </div>
           ) : (
             <div className="b">
@@ -87,7 +88,7 @@ const Header = () => {
                 <a href="/register">Register</a>
               </button> */}
             
-              <Link to="/login"> <button>
+              <Link to="/login"> <button className='b'>
                 Login 
               </button></Link>
             </div>
