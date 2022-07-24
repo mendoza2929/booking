@@ -9,7 +9,7 @@ const Widget = ({ type }) => {
   let data;
 
   //temporary
-  const amount = 100;
+  const amount = 150;
   const diff = 20;
 
   switch (type) {
@@ -31,9 +31,9 @@ const Widget = ({ type }) => {
       break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "Reservation",
         isMoney: false,
-        link: "View all orders",
+        link: "View all reservation",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -47,7 +47,7 @@ const Widget = ({ type }) => {
       break;
     case "earning":
       data = {
-        title: "EARNINGS",
+        title: "Hotels",
         isMoney: true,
         link: "View net earnings",
         icon: (
