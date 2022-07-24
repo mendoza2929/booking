@@ -24,6 +24,7 @@ header img {
     margin-top: -50px;
 }
 
+
 header a{
     margin-left: 30px;
     transition: 0.5s;
@@ -32,9 +33,19 @@ header a{
     color: #ff9144;
 }
 
+.b{
+    margin-bottom: 80px;
+}
+
 .btn-icon {
     font-size: 15px;
 }
+
+
+button .btn-logout{
+    color:#fff;
+}
+
 
 header a:hover{
     color:#43b2b9;
@@ -162,8 +173,8 @@ header a li{
 
     header .btn1{
         font-size: 10px;
-        margin-top: 5px;
-        margin-left:-5px;
+        margin-top: 10px;
+        margin-left:-15px;
         padding-left: 20px;
         
       
@@ -176,9 +187,49 @@ header a li{
     header .toggle{
         display: block;
         margin-top: 10px;
-        padding: 10px   ;
-        margin-left:-55px;
-        font-size: 10px;
+        margin-left:-100px;
+        font-size: px;
      
     }
 }
+
+@media all and (max-width: 480px) {
+    header{
+        padding: 0;
+        
+    }
+    header img {
+        margin-top:20px;
+     
+        
+    }
+   
+    .logo img{
+        width: 100px;
+        padding: 5px;
+        margin-top:10px;
+    }
+
+    header .button{
+        display: none;
+    }
+
+   
+
+    header .nav .flex{
+        display: none;
+    }
+
+    header .toggle{
+        display: block;
+        margin-bottom:20px;
+        margin-left:-50px;
+        margin-top:-5px;
+    }
+
+    header .b{
+       display: none;
+    }
+ }
+ 
+ 
