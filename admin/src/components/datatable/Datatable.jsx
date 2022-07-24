@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
+import { roomColumns, hotelColumns } from "../../datatablesource";
 
 const Datatable = ({ columns }) => {
   const location = useLocation();
@@ -11,16 +12,37 @@ const Datatable = ({ columns }) => {
   const [list, setList] = useState("");
   const { data, loading, error } = useFetch(`/${path}`);
 
-  console.log("List of", `${path}`, list); 
+  // console.log("List of", `${path}`, list);
+  // console.log("roomColumns", roomColumns);
+
+  let isRoom;
+
+  if (`${path}` === "rooms") {
+    isRoom = true;
+  } else {
+    isRoom = false;
+  }
 
   useEffect(() => {
     setList(data);
   }, [data]);
 
+  // console.log("hotelColumns", useFetch('/hotels'));
+  console.log("DATA", data);
+
   const handleDelete = async (id) => {
+    console.log("Delete Hotel", `${path}`, `${id}`);
     try {
       await axios.delete(`/${path}/${id}`);
       setList(list.filter((item) => item._id !== id));
+    } catch (err) {}
+  };
+
+  const handleRoomDelete = async (roomId, hotelId) => {
+    console.log("Delete Room", `${path}`, `${roomId}`);
+    try {
+      await axios.delete(`/${path}/${roomId}/${hotelId}`);
+      setList(list.filter((item) => item._id !== roomId));
     } catch (err) {}
   };
 
@@ -37,7 +59,15 @@ const Datatable = ({ columns }) => {
             </Link>
             <div
               className="deleteButton"
-              onClick={() => handleDelete(params.row._id)}
+              // onClick={() => handleDelete(params.row._id)}
+              onClick={() =>
+                isRoom
+                  ? handleRoomDelete(
+                      params.row._id,
+                      params.hotelColumns.row._id
+                    )
+                  : handleDelete(params.row._id)
+              }
             >
               Delete
             </div>

@@ -65,8 +65,8 @@ const Header = () => {
           {isLoggedIn ? (
             <div className="b">
               {" "}
-              {user.username}{" "}
-              <button className="btn-logout" onClick={handleSubmit}>
+              <a href="/profile">{user.username}</a>{" "}
+              <button className="btn1" onClick={handleSubmit}>
                 <a href="/logout">Logout</a>
               </button>
             </div>
