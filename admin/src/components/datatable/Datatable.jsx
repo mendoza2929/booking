@@ -12,6 +12,12 @@ const Datatable = ({ columns }) => {
   const [list, setList] = useState("");
   const { data, loading, error } = useFetch(`/${path}`);
 
+<<<<<<< Updated upstream
+=======
+  // console.log("List of", `${path}`, list);
+  // console.log("roomColumns", roomColumns);
+
+>>>>>>> Stashed changes
   let isRoom;
 
   if (`${path}` === "rooms") {
@@ -59,7 +65,14 @@ const Datatable = ({ columns }) => {
               // onClick={() => handleDelete(params.row._id)}
               onClick={() =>
                 isRoom
+<<<<<<< Updated upstream
                   ? handleRoomDelete(params.row._id, "62dd144065c77ecaa65c353b")
+=======
+                  ? handleRoomDelete(
+                      params.row._id,
+                      params.hotelColumns.row._id
+                    )
+>>>>>>> Stashed changes
                   : handleDelete(params.row._id)
               }
             >

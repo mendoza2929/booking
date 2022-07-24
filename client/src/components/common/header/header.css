@@ -33,12 +33,22 @@ header a{
     color: #ff9144;
 }
 
-.b{
-    margin-bottom: 80px;
+.b1{
+    color: #fff;
+    font-size: 10px;
+    margin-bottom: 70px;
 }
 
 .btn-icon {
     font-size: 15px;
+}
+.btn-logout{
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    padding:10px;
+    background-color: #43b2b9;
+   left: 0;
 }
 
 
