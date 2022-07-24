@@ -9,33 +9,44 @@ import {BiExit} from 'react-icons/bi'
 import "./header.css"
 import { useState } from 'react'
 import logo from '../../img/logo.png'
-import {IoIosLogIn} from 'react-icons/io'
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
+// import {IoIosLogIn} from 'react-icons/io'
 import { AuthContext } from '../../../context/AuthContext'
 
 const Header = () => {
-
+    const showAlert = () => {
+      swal({
+        title: "Good Bye!",
+        text: "You successfully logout!",
+        icon: "success",
+        button: "Thank you!",
+      });
+    };
     const { user, dispatch } = useContext(AuthContext);
 
     const [navlist, setNavlist] = useState(false);
 
     let isLoggedIn;
     // let usertest = 'test';
-    console.log('user values:', user);
+    // console.log('user values:', user);
     if (user === null) {
-        console.log('variable is undefined or null');
+        // console.log('variable is undefined or null');
         isLoggedIn = false;
     } else {
-        console.log('variable is defined');
+        // console.log('variable is defined');
         isLoggedIn = true;
     }
 
-    console.log('User status is isLoggedIn: ', isLoggedIn);
-
+    // console.log('User status is isLoggedIn: ', isLoggedIn);
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.delete('/auth/logout')
           .then(function (response) {
               console.log(response)
+              showAlert();
+              navigate("/login");
           })
           .catch(function (error) {
               console.log(error)
@@ -61,7 +72,7 @@ const Header = () => {
               ))}
             </ul>
           </div>
-          {console.log("isLoggedIn User", isLoggedIn)}
+          {/* {console.log("isLoggedIn User", isLoggedIn)} */}
           {isLoggedIn ? (
             <div className="b">
               {" "}

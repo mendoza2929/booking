@@ -16,6 +16,15 @@ const Register = () => {
         button: "Register!",
       });
 }
+
+  const showError = () => {
+    swal({
+        title: "Error Password Not Match!",
+        text: "Error Please try again!!",
+        icon: "error",
+        button: "Register!",
+      });
+    }
   
     const [customerRegister, setCustomerRegister] = useState(
       { username: '' ,email: '', password: '', isAdmin: false,  confirmPassword: ''}
@@ -26,20 +35,19 @@ const Register = () => {
   }
   const navigate  = useNavigate()
 
-
-  const handleSubmit = (e) => {
-      e.preventDefault()
-      console.log(customerRegister)
-      axios.post('/auth/register', customerRegister)
-        .then(function (response) {
-            console.log(response)
-        })
-      navigate("/login")
-      
-        .catch(function (error) {
-            console.log(error)
-        })
-      }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log(customerRegister);
+      const res = await axios.post("/auth/register", customerRegister)
+      if ( res.status === 200 ) {
+        showAlert();
+        navigate("/login");
+      } 
+    } catch (e) {
+      showError();
+    }
+  }
 
   return (
     <>
@@ -92,7 +100,7 @@ const Register = () => {
               value={customerRegister.confirmPassword} 
               onChange={handleChange}
             />
-            <button onClick={showAlert} className="registerButton" type="submit">
+            <button className="registerButton" type="submit">
               Register
             </button>
             <div className='registerText'>Already have an account? <a href='/login'>Log In</a></div>
