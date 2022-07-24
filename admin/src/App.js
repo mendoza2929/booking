@@ -12,6 +12,8 @@ import { AuthContext } from "./context/AuthContext";
 import { hotelColumns, roomColumns, userColumns } from "./datatablesource";
 import NewHotel from "./pages/newHotel/NewHotel";
 import NewRoom from "./pages/newRoom/NewRoom";
+import NewUpdate from "./pages/updatehotel/NewUpdate";
+import NewRoomUpdate from "./pages/updateRoom/NewRoomUpdate";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -64,6 +66,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+             
             </Route>
             <Route path="hotels">
               <Route
@@ -90,6 +93,15 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+               <Route
+                path="update"
+                element={
+                  <ProtectedRoute>
+                    <NewUpdate inputs={hotelInputs} title="Add New Hotel" />
+                  </ProtectedRoute>
+                }
+              />
+                
             </Route>
             <Route path="rooms">
               <Route
@@ -113,6 +125,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <NewRoom columns={roomInputs} title="Add New Room" />
+                  </ProtectedRoute>
+                }
+              />
+                <Route
+                path="update"
+                element={
+                  <ProtectedRoute>
+                    <NewRoomUpdate columns={roomInputs} title="Add New Room" />
                   </ProtectedRoute>
                 }
               />

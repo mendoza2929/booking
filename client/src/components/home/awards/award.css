@@ -2,3 +2,24 @@
     background-color: #e2e1e5;
     
 }
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    .awards .heading h1{
+        font-size: 20px;
+    }
+
+    .awards{
+        width: 80%;
+        padding: 50px;
+        margin-left: 50px;
+    }
+
+
+}
+
+@media all and (max-width: 480px) { 
+    .awards .heading h1{
+        font-size: 20px;
+    }
+}
+ 

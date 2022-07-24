@@ -9,7 +9,9 @@ import {BiExit} from 'react-icons/bi'
 import "./header.css"
 import { useState } from 'react'
 import logo from '../../img/logo.png'
+import {IoIosLogIn} from 'react-icons/io'
 import { AuthContext } from '../../../context/AuthContext'
+
 const Header = () => {
 
     const { user, dispatch } = useContext(AuthContext);
@@ -70,12 +72,13 @@ const Header = () => {
             </div>
           ) : (
             <div className="b">
-              <button className="btn1">
+              {/* <button className="btn1">
                 <a href="/register">Register</a>
-              </button>
-              <button className="btn1">
-                <a href="/login">Login</a>
-              </button>
+              </button> */}
+            
+              <Link to="/login"> <button>
+                Login 
+              </button></Link>
             </div>
           )}
 

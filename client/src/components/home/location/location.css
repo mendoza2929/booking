@@ -49,12 +49,41 @@
 
 @media screen and (max-width:768px){
     .location .overlay::after{
-        width: 280px;
-        height: 170px;
+       display: none;
     }
 
     .location{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
+
+  
+
+    
 }
+
+@media all and (max-width: 480px) { 
+    .location .overlay::after{
+        display: none;
+     }
+ 
+     .location{
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     .box h5 {
+     margin-bottom: 100px;
+     }
+
+     .heading h1{
+        font-size: 30px;
+     }
+
+     .box label{
+        display: none;
+     }
+ 
+}
+ 

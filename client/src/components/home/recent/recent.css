@@ -38,3 +38,25 @@
     border-top: 1px solid #efe8f3;
     
 }
+
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+    .grid3{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    .grid3{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .grid3{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+ }
+ 

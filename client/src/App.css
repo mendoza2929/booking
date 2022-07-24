@@ -43,8 +43,8 @@ ul{
 
 button{
     border-radius: 5px;
-    padding: 10px;
-    background-color:#0057ff;
+    padding: 15px;
+    background-color:#27a4a2;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -53,6 +53,11 @@ button{
    
 }
 
+.btn1{
+    font-size: 15px;
+}
+
+
 button:hover{
     background-color:#ff9144;
     color: #fff;
@@ -60,8 +65,9 @@ button:hover{
 }
 
 button i{
-    margin-right: 5px;
-    font-size: 12px;
+    
+    font-size: 15px;
+    
 }
 
 
@@ -144,6 +150,13 @@ img{
     margin-top: 30px;
     
 }
+
+.btn1{
+    margin-bottom: 70px;
+    margin-left: 20px;
+   display: inline
+}
+
 
 
 .btn2{
