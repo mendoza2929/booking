@@ -21,7 +21,7 @@ export const userInputs = [
     id: "password",
     label: "Password",
     type: "password",
-    placeholder:"********"
+    placeholder: "********",
   },
 
   {
@@ -31,7 +31,6 @@ export const userInputs = [
     placeholder: "destination",
   },
 ];
-
 
 export const hotelInputs = [
   {
