@@ -7,18 +7,12 @@ import Header from '../common/header/Header';
 import useFetch from '../../components/hooks/useFetch'
 import { AuthContext } from '../../context/AuthContext'
 import "./profile.css";
-import swal from 'sweetalert'
 
 
 
 
 const { TabPane } = Tabs;
 const Profile = () => {
-
-
-
-
-  
     const [list, setList] = useState("");
     // const { data, loading, error } = useFetch(`/profile`);
     const { user, dispatch } = useContext(AuthContext);
@@ -62,17 +56,18 @@ const Profile = () => {
     <Tabs defaultActiveKey="1">
     <TabPane tab="Profile" key="1">
       <h1>My Profile</h1>
-      <form className="form-profile" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" readOnly placeholder={user.username} /> <br></br>
-        <input type="email" id="email" name="email"readOnly placeholder={user.email} /> <br></br>
-        <label for="password">Last Updated Password : {user.updatedAt}</label>  
-        {/* <input type="password" id="password" name="password" placeholder={user.updatedAt}/><br></br> */}
-       
+        <input type="text" id="username" name="username" readOnly/>{user.username} <br></br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"readOnly/> {user.email}<br></br>
+        <label for="password">Last Password</label>
+        <input type="password" id="password" name="password"/> {user.updatedAt} <br></br>
+        <label for="password">Password</label>
         <input type="password" id="password" name="password" onChange={handleChange} value={passwordUpdate.password}/><br></br>
         <label for="confirmPassword">Confirm Password</label> 
         <input type="password" id="confirmPassword" name="confirmPassword" onChange={handleChange} value={passwordUpdate.confirmPassword}/><br></br>
-        <button className="btn-update" type="submit">Update</button>
+        <button type="submit">Update</button>
         </form>
     </TabPane>
     <TabPane tab="Booking" key="2">

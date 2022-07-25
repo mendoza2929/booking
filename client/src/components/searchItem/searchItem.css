@@ -50,9 +50,7 @@
     font-size: 12px;
     font-weight: 600;
 }
-.sSearchButton{
-    color: #fff;
-}
+
 .sRating{
     display: flex;
     justify-content: space-between;

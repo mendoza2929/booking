@@ -77,15 +77,6 @@
     box-shadow: 2px 2px black;
 }
 
-.back h1{
-    color: #fff;
-}
-
-.back span{
-    font-size: 25px;
-    font-weight: 600;
-}
-
 @media  screen and (max-width:768px){
     html{
         font-size: 14px;
