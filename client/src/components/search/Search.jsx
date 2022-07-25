@@ -100,7 +100,7 @@ const Search = () => {
                 </div>
               </div>
             </div>
-            <button onClick={handleClick}>Search</button>
+            <button className='btn-check' onClick={handleClick}>Search</button>
             </div>
             <div className="listResult">
               {loading ? "loading": <>

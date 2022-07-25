@@ -45,7 +45,6 @@ const Result = () => {
        <Header/>
       {loading ? "loading" : <div className="hotelContainer">
         <div className="hotelWrapper">
-          <button className='booknow'>Reserve or Book now!</button>
           <h1 className="hotelTitle">{data.name}</h1>
             <div className="hotelAddress">
                 <i><ImLocation2/></i>
@@ -59,7 +58,7 @@ const Result = () => {
                 data.photos?.map((photo)=>(
                   
                     <div className="hoteImgWrapper">
-                      <img src={photo.cover} alt="" className="hotelImg" />
+                      <img src={data.photos} alt="" className="hotelImg" />
                     </div>
                  
                 ))
@@ -77,7 +76,7 @@ const Result = () => {
                     <h2>
                       <b>₱{days * data.cheapestPrice * options.room}</b> ({days}{""} Days)
                     </h2>
-                    <button onClick={handleClick}>Reserve or Book Now!</button>
+                    <button className='reserve-btn' onClick={handleClick}>Reserve or Book Now!</button>
               </div>
             </div>
         </div>
