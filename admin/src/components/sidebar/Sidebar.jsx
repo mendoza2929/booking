@@ -51,11 +51,11 @@ const Sidebar = () => {
             <span>Rooms</span>
           </li>
           </Link>
-          <p className="title">Reservation</p>
+          {/* <p className="title">Reservation</p>
           <li>
             <InsertChartIcon className="icon" />
             <span>All Reservation</span>
-          </li>
+          </li> */}
           {/* <li>
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>

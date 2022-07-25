@@ -8,12 +8,20 @@ import useFetch from '../../components/hooks/useFetch'
 import { AuthContext } from '../../context/AuthContext'
 import "./profile.css";
 import swal from 'sweetalert'
+import { Link } from "react-router-dom";
+
+
+
+
+
+
+
 
 
 
 
 const { TabPane } = Tabs;
-const Profile = () => {
+const Profile = ({item}) => {
 
 
 
@@ -76,7 +84,8 @@ const Profile = () => {
         </form>
     </TabPane>
     <TabPane tab="Booking" key="2">
-        <h1>My Bookings</h1>
+
+      
 
     </TabPane>
   </Tabs>

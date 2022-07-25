@@ -87,7 +87,7 @@ const Login = () => {
                                 Log In
                             </button>
                             {error && <span>{error.message}</span>}
-                            <div className='alogInText'>Don't have an account yet? <a href='/register'>Register</a></div>
+                           
                         </form>
                         </div>
                     </div>
