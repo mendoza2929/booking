@@ -5,16 +5,31 @@ import jwt from "jsonwebtoken";
 
 export const register = async (req, res, next) => {
   try {
+    const { username, email, password, confirmPassword } = req.body;
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
 
-    const newUSer = new User({
-      ...req.body,
-      password: hash,
-    });
+    // console.log("Sample /Register Create User");
+    // console.log("Password",req.body);
+    const user = await User.findOne({ email });
+    console.log("user", user);
+    if (user) { 
+      return res.status(400).send("User already exists");
+    } else if (!username || !email || !password || !confirmPassword) {
+      res.status(400).send("Something missing");
+    } else if (password !== confirmPassword) {
+      res.status(400).send("Passwords do not match!");
+    } else {
+      const newUSer = new User({
+        ...req.body,
+        password: hash,
+      });
 
-    await newUSer.save();
-    res.status(200).send("User has been Created");
+      await newUSer.save();
+      res.status(200).send("User has been Created");
+    }
+
+
   } catch (err) {
     next(err);
   }
@@ -71,32 +86,4 @@ export const logout = async (req, res, next) => {
     res.clearCookie("session-id"); // cleaning the cookies from the user session
     res.status(200).send("Logout Success");
   });
-};
-
-export const createUser = async (req, res, next) => {
-  //   console.log("Sample /Register Create User");
-  //   console.log(req.body.password);
-  const { username, email, password, confirmPassword } = req.body;
-  if (!username || !email || !password || !confirmPassword) {
-    res.status(400);
-  } else if (password !== confirmPassword) {
-    throw Error("Passwords do not match!");
-  }
-  const hashedPwd = await bcrypt.hash(req.body.password, saltRounds);
-  //   console.log(hashedPwd);
-  User.create(
-    {
-      username: req.body.username,
-      email: req.body.email,
-      password: hashedPwd,
-    },
-    (error, data) => {
-      if (error) {
-        return next(error);
-      } else {
-        console.log(data);
-        res.json(data);
-      }
-    }
-  );
 };
