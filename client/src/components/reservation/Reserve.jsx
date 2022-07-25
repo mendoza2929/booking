@@ -68,33 +68,9 @@ const Reserve = ({setOpen,hotelId}) => {
   return (
         <div className="reserve">
             <div className="rContainer">
-                <i className='rClose' onClick={()=>setOpen(false)}><IoMdExit/></i>
-                <span>Select your rooms:</span>
-                {data.map(item=>(
-                    <div className="rItem">
-                        <div className="rIteminfo">
-                            <div className="rTitle">{item.title}</div>
-                            <div className="rDesc">{item.desc}</div>
-                            <div className="rMax">Max People <b>{item.maxPeople}</b></div>
-                            {/* <div className="rPrice">₱ {item.price }</div> */}
-                        </div>
-                            <div className="rSelectRooms">
-                            {item.roomNumber.map(roomNumber=>(
-                                 <div className="room">
-                                <label>{roomNumber.number}</label>
-                                <input type="checkbox"   
-                                value={roomNumber._id}
-                                onChange={handleSelect}
-                                 disabled={!isAvailable(roomNumber)}
-                                 
-                                 />
-                           
-                        </div>
-                         ))}
-                         </div>
-                    </div>
-                ))}
-                <button onClick={handleClick}  className="rButton">Reserve Now!</button>
+                {/* <i className='rClose' onClick={()=>setOpen(false)}><IoMdExit/></i> */}
+                <h1>Succesfully Reserve</h1>
+                <button onClick={handleClick}  className="rButton">Check your Booking!</button>
             </div>
         </div>
   )

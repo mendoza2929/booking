@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../common/header/Header'
 import useFetch from '../hooks/useFetch'
 import {ImLocation2} from 'react-icons/im'
-
 import "./result.css"
 import { SearchContext } from '../../context/SearchContext'
 import { AuthContext } from '../../context/AuthContext'
