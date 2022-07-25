@@ -2,6 +2,11 @@
     position: relative;
     border-radius: 5px;
     margin: 30px;
+  
+}
+
+.box h5{
+    color: #fff;
 }
 
 
@@ -34,6 +39,8 @@
     border-radius: 5px;
     
 }
+
+
 
 
 .location h5{

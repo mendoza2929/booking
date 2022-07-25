@@ -33,10 +33,21 @@ header a{
     color: #ff9144;
 }
 
-.b1{
+.b1 {
     color: #fff;
     font-size: 10px;
     margin-bottom: 70px;
+}
+
+ .b{
+    color: #fff;
+    margin-bottom: 35px;
+    font-size: 10px;
+   
+}
+
+.a-profile{
+    font-size: 20px;
 }
 
 .btn-icon {

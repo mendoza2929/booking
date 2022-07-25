@@ -16,7 +16,7 @@ const SearchItem = ({item}) => {
         <div className="searchDetails">
             <div className="sRating">
                 <span>Excellent</span>
-                <button>8.9</button>
+                <button className="sSearchButton">8.9</button>
             </div>
             <div className="sDetailsTexts">
                 <span className='sPrice'>₱{item.cheapestPrice}</span>

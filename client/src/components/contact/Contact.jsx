@@ -7,7 +7,32 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
+import  { useRef } from 'react'
+import emailjs from '@emailjs/browser';
+import swal from 'sweetalert'
 const Contact = () => {
+
+  const showAlert = () => {
+    swal({
+        title: "Good job!",
+        text: "You successfully Send Message!",
+        icon: "success",
+        button: "Message!",
+      });
+}
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_up11p9j', 'template_hwwtz1h', form.current, 'rkPdNgdyIpvgB4dzJ')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
        <>
     <Header/>
@@ -33,14 +58,14 @@ const Contact = () => {
         </div>
       
         <div className="container">
-            <form action="" className='shadow contactForm'>
+            <form ref={form} className='shadow contactForm' onSubmit={sendEmail}>
                 <span className='spanContact'>Let's keep in touch!</span>
                 <div className='inputContact'>
-                    <input type="text" placeholder='Name'/>
-                    <input type="email" placeholder='Email' />
+                    <input type="text" placeholder='Name' name="name"/>
+                    <input type="email" placeholder='Email' name="email"/>
                 </div>
-                <textarea name="" id="" cols="30" rows="10" placeholder='Inform us of your inquiries...'></textarea>
-                <input type="submit" value='submit' className="btn7" />
+                <textarea name="message " id="" cols="30" rows="10" placeholder='Inform us of your inquiries...'></textarea>
+                <button onClick={showAlert} type="submit" value='submit' className="btn7">Submit</button>
             </form>
         </div>
       
